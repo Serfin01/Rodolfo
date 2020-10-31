@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afe227ef64be6a4eb8b925aee559563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensivility: 10
+  sensivility: 20
 --- !u!23 &1444586720
 MeshRenderer:
   m_ObjectHideFlags: 0

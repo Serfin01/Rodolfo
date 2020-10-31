@@ -4765,6 +4765,7 @@ GameObject:
   - component: {fileID: 259760236782167371}
   - component: {fileID: 259760236782167368}
   - component: {fileID: 259760236782167369}
+  - component: {fileID: 6508111122341044571}
   m_Layer: 0
   m_Name: BalaEnemyTurret
   m_TagString: Untagged
@@ -9569,6 +9570,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6508111122341044571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259760236782167374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c800b2664a9a649b536f08b7b76660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletForce: 5
+  damage: 10
 --- !u!1 &259760237827221818
 GameObject:
   m_ObjectHideFlags: 0
