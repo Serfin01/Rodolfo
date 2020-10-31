@@ -19,8 +19,13 @@ public class BulletEnemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Damaged(damage);
-            Destroy(this.gameObject);
+            //other.GetComponent<Player>().Damaged(damage);
+            
+            if (other.GetComponent<PlayerAbilities>().canBeDamaged)
+            {
+                other.GetComponent<Player>().Damaged(damage);
+                Destroy(this.gameObject);
+            }
         }
 
         if (other.CompareTag("Limit"))

@@ -4766,6 +4766,7 @@ GameObject:
   - component: {fileID: 259760236782167368}
   - component: {fileID: 259760236782167369}
   - component: {fileID: 6508111122341044571}
+  - component: {fileID: 2133345056182885173}
   m_Layer: 0
   m_Name: BalaEnemyTurret
   m_TagString: Untagged
@@ -9584,6 +9585,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 5
   damage: 10
+--- !u!135 &2133345056182885173
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259760236782167374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.28
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &259760237827221818
 GameObject:
   m_ObjectHideFlags: 0
