@@ -5,32 +5,38 @@ using UnityEngine;
 public class Mano : MonoBehaviour
 {
     [SerializeField] GameObject bala;
+    private float timer;
     /*
     Vector3 mousePos;
     [SerializeField] Camera cam;
     private Rigidbody rb; 
-    
+    */
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        timer = 0;
     }
-    */
+    
     void Update()
     {
         Disparar();
+        timer += Time.deltaTime;
     }
 
     void Disparar()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && timer >= 0.5)
         {
             Instantiate(bala, transform.position, transform.rotation);
-            //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             
+            timer = 0;
         }
-
+        
+        
     }
+
+    
     /*
     void FixedUpdate()
     {
