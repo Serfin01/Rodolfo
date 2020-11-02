@@ -8,6 +8,7 @@ public class MovementNikel : MonoBehaviour
     public int speed;
     Vector3 moveDirection;
     [SerializeField] int distDash;
+    [SerializeField] TrailRenderer dash;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,6 @@ public class MovementNikel : MonoBehaviour
                 transform.Translate(0, 0, -distDash);
             }
         }
-            
-
+        else { dash.Clear(); }
     }
 }

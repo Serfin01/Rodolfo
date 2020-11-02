@@ -936,6 +936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distDash: 5
+  dash: {fileID: 1524734207}
 --- !u!136 &857289123
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1221,6 +1222,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 857289125}
     m_Modifications:
+    - target: {fileID: 2842387964444810856, guid: 202ee216c0f88ec4cb95d6597238a48d,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8738488181077831939, guid: 202ee216c0f88ec4cb95d6597238a48d,
         type: 3}
       propertyPath: looping
@@ -1508,6 +1514,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!96 &1524734207 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2842387964444810856, guid: 202ee216c0f88ec4cb95d6597238a48d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1281243780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1526339635
 PrefabInstance:
   m_ObjectHideFlags: 0
