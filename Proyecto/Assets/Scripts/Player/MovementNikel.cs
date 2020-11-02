@@ -28,10 +28,10 @@ public class MovementNikel : MonoBehaviour
 
     }
 
-    void Dash(){
+    void Dash() {
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            
+        if (Input.GetKeyDown(KeyCode.Space)) {
+
             if (Input.GetAxis("Horizontal") > 0)
             {
                 transform.Translate(distDash, 0, 0);
@@ -48,8 +48,8 @@ public class MovementNikel : MonoBehaviour
             {
                 transform.Translate(0, 0, -distDash);
             }
-
         }
+            
 
     }
 }

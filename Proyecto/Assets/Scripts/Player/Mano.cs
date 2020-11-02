@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Mano : MonoBehaviour
 {
     [SerializeField] GameObject bala;
     private float timer;
+    [SerializeField] ParticleSystem Muzzle;
     /*
     Vector3 mousePos;
     [SerializeField] Camera cam;
@@ -26,9 +29,13 @@ public class Mano : MonoBehaviour
     void Disparar()
     {
 
+
         if (Input.GetMouseButton(0) && timer >= 0.5)
         {
+
             Instantiate(bala, transform.position, transform.rotation);
+            
+            Muzzle.Play();
             
             timer = 0;
         }
