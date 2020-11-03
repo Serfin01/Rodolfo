@@ -26,7 +26,6 @@ public class MovementNikel : MonoBehaviour
         transform.Translate(moveDirection);
 
         Dash();
-
     }
 
     void Dash() {
@@ -36,20 +35,30 @@ public class MovementNikel : MonoBehaviour
             if (Input.GetAxis("Horizontal") > 0)
             {
                 transform.Translate(distDash, 0, 0);
+                dash.emitting = true;
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
                 transform.Translate(-distDash, 0, 0);
+                dash.emitting = true;
             }
             if (Input.GetAxis("Vertical") > 0)
             {
                 transform.Translate(0, 0, distDash);
+                dash.emitting = true;
             }
             if (Input.GetAxis("Vertical") < 0)
             {
                 transform.Translate(0, 0, -distDash);
+                dash.emitting = true;
             }
+
         }
-        else { dash.Clear(); }
+        else
+        {
+            dash.emitting = false;
+        }
+
+
     }
 }

@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8738488181077831942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.16, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: 0, y: 0.904, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,7 +50,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 48ce7262974947c4585b3486d3ce49a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,7 +71,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2.5
+  m_Time: 0.99
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -79,30 +79,30 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.003215434
-        value: 0.37500006
-        inSlope: 178.36763
-        outSlope: 178.36763
+        time: 0
+        value: 0.50766
+        inSlope: 1.2441127
+        outSlope: 1.2441127
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.003225806
+        outWeight: 0.11725397
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: -2.7265267
-        outSlope: -2.7265267
+        value: 0.47959137
+        inSlope: -0.48732275
+        outSlope: -0.48732275
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.083601296
+        inWeight: 0.15755047
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -131,9 +131,9 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
+    textureMode: 2
+    shadowBias: 0
+    generateLightingData: 1
   m_MinVertexDistance: 0
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
