@@ -10,13 +10,8 @@ public class Scrolls : MonoBehaviour
 
     private int currenIndex = 0;
     // Start is called before the first frame update
-    void Start()
-    {
-        int newIndex = UnityEngine.Random.Range(0, typeScrolls.Length);
-        typeScrolls[currenIndex].SetActive(false);
-        currenIndex = newIndex;
-        typeScrolls[currenIndex].SetActive(true);
-    }
+
+    private Type myAbility;
 
     enum Abilities
     {
@@ -25,8 +20,32 @@ public class Scrolls : MonoBehaviour
 
     private Abilities currentAbility = Abilities.None;
 
-    //private Dictionary<int>
+    private Dictionary<int, Type> abilities = new Dictionary<int, Type>()
+    {
+        //{1, typeof(A1) },
+        //{2, typeof(A2) },
+        //{3, typeof(A3) },
 
+    };
+
+    void Start()
+    {
+        int newIndex = UnityEngine.Random.Range(0, typeScrolls.Length);
+        typeScrolls[currenIndex].SetActive(false);
+        currenIndex = newIndex;
+        typeScrolls[currenIndex].SetActive(true);
+
+        int random = UnityEngine.Random.Range(0, abilities.Count);
+        myAbility = abilities[random];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.AddComponent(myAbility);
+        }
+    }
     /*
     // Update is called once per frame
     void Update()
