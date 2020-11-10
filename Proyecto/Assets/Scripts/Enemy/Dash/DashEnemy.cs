@@ -5,31 +5,56 @@ using UnityEngine;
 public class DashEnemy : MonoBehaviour
 {
     [SerializeField] private float dashForce;
-    [SerializeField] private float dashDuration;
+    [SerializeField] private float recoveryTime;
     Transform trPlayer;
     private float rotSpeed = 3.0f;
     private float moveSpeed = 3.0f;
 
+    float distancia;
+    //[SerializeField] Transform taget;
+
     private Rigidbody rb;
+
+    float iniMoveSpeed;
+    bool canMove = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         trPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        iniMoveSpeed = moveSpeed;
     }
 
     void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(trPlayer.position - transform.position), rotSpeed * Time.deltaTime);
+        if(canMove == true)
+        {
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(trPlayer.position - transform.position), rotSpeed * Time.deltaTime);
+            transform.LookAt(trPlayer);
 
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+            distancia = Vector3.Distance(this.transform.position, trPlayer.position);
+
+            if (distancia <= 5)
+            {
+                moveSpeed = 50;
+                if (distancia <= 0.2f)
+                {
+                    canMove = false;
+                    StartCoroutine(Cast());
+                }
+            }
+
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(Cast());
+            //StartCoroutine(Cast());
             
         }
         /*
@@ -41,15 +66,14 @@ public class DashEnemy : MonoBehaviour
         }
         */
     }
-
+    
     public IEnumerator Cast()
     {
-        //rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
-        transform.position += transform.forward * dashForce * Time.deltaTime;
-        Debug.Log("dash");
+        moveSpeed = iniMoveSpeed;
 
-        yield return new WaitForSeconds(dashDuration);
+        yield return new WaitForSeconds(recoveryTime);
 
-        rb.velocity = Vector3.zero;
+        canMove = true;
     }
+    
 }
