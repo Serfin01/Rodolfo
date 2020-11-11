@@ -33,6 +33,18 @@ public class BulletEnemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
+        if (other.CompareTag("Shield"))
+        {
+            bulletForce = bulletForce/2;
+            Debug.Log("dentro");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Shield"))
+        {
+            bulletForce = bulletForce * 2;
+            Debug.Log("fuera");
+        }
     }
 }

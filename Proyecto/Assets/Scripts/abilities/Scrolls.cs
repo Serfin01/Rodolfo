@@ -19,7 +19,7 @@ public class Scrolls : MonoBehaviour
     }
 
     private Abilities currentAbility = Abilities.None;
-
+    
     private Dictionary<int, Type> abilities = new Dictionary<int, Type>()
     {
         //{1, typeof(A1) },
@@ -46,6 +46,8 @@ public class Scrolls : MonoBehaviour
             other.gameObject.AddComponent(myAbility);
         }
     }
+
+    
     /*
     // Update is called once per frame
     void Update()
