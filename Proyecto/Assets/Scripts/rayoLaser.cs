@@ -6,7 +6,10 @@ public class rayoLaser : MonoBehaviour
 {
 
     private LineRenderer lr;
-    // Use this for initialization
+
+    private bool canShoot;
+    //[SerializeField] float shotDuration;
+
     void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -26,6 +29,7 @@ public class rayoLaser : MonoBehaviour
         }
         else lr.SetPosition(1, transform.forward * 5000);
     }
+    
 }
 /*public class rayoLaser : MonoBehaviour
 {
