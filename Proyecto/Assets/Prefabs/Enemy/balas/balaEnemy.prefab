@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: -2786059479102257003}
   - component: {fileID: 3105303484834812743}
   m_Layer: 0
-  m_Name: BalaEnemy
+  m_Name: balaEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9643,7 +9643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c800b2664a9a649b536f08b7b76660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletForce: 5
+  bulletForce: 20
   damage: 10
 --- !u!135 &3105303484834812743
 SphereCollider:

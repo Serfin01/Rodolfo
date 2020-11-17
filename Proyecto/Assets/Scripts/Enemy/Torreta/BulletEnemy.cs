@@ -35,7 +35,7 @@ public class BulletEnemy : MonoBehaviour
 
         if (other.CompareTag("Shield"))
         {
-            bulletForce = bulletForce/2;
+            bulletForce = bulletForce/10;
             Debug.Log("dentro");
         }
     }
@@ -43,7 +43,7 @@ public class BulletEnemy : MonoBehaviour
     {
         if (other.CompareTag("Shield"))
         {
-            bulletForce = bulletForce * 2;
+            bulletForce = bulletForce * 10;
             Debug.Log("fuera");
         }
     }

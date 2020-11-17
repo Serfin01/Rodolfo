@@ -4808,7 +4808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32b003712cd5d74595f06acbd908364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletForce: 10
+  bulletForce: 30
   damage: 10
 --- !u!135 &7333443667801198375
 SphereCollider:
