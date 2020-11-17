@@ -4810,6 +4810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 30
   damage: 10
+  charco: {fileID: 8738488181077831942, guid: 202ee216c0f88ec4cb95d6597238a48d, type: 3}
 --- !u!135 &7333443667801198375
 SphereCollider:
   m_ObjectHideFlags: 0

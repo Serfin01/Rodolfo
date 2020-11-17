@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float bulletForce;
     [SerializeField] int damage;
+    [SerializeField] GameObject charco;
+    private int countCharco;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,13 @@ public class Bullet : MonoBehaviour
         {
             other.GetComponent<Enemy>().Damaged(damage);
             //Debug.Log("damage");
+            countCharco = countCharco + 1;
+            if(countCharco >= 3)
+            {
+                Instantiate(charco);
+                Debug.Log("charco");
+                countCharco = 0;
+            }
         }
     }
 }

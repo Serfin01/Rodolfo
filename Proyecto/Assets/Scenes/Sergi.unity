@@ -787,6 +787,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834274764}
     m_Modifications:
+    - target: {fileID: 4831017244928453644, guid: d10f6672b04ee6d4499b15bb9b84fae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4882376893041705364, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -820,7 +825,7 @@ PrefabInstance:
     - target: {fileID: 4882376893400566957, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.49
       objectReference: {fileID: 0}
     - target: {fileID: 4882376893400566957, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
@@ -895,12 +900,12 @@ PrefabInstance:
     - target: {fileID: 4882376894242142956, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
       propertyPath: m_Intensity
-      value: 5.2
+      value: 12.16
       objectReference: {fileID: 0}
     - target: {fileID: 4882376894242142956, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
       propertyPath: m_Range
-      value: 2.55
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 4882376894747151666, guid: d10f6672b04ee6d4499b15bb9b84fae0,
         type: 3}
@@ -1965,6 +1970,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038824252}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1043387139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043387141}
+  - component: {fileID: 1043387140}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1043387140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043387139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 66736028cf3473d49a61d016d60d65a8, type: 2}
+--- !u!4 &1043387141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043387139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.810287, y: -8.904396, z: 3.795479}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146725493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,7 +3338,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
