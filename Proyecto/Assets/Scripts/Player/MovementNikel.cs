@@ -9,11 +9,13 @@ public class MovementNikel : MonoBehaviour
     Vector3 moveDirection;
     [SerializeField] int distDash;
     [SerializeField] TrailRenderer dash;
+    public AudioSource audio;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -24,6 +26,20 @@ public class MovementNikel : MonoBehaviour
         moveDirection = Vector3.ClampMagnitude(moveDirection, 1);
 
         transform.Translate(moveDirection);
+
+        if (Input.GetAxis("Vertical") != 0 && audio.isPlaying == false)
+        {
+            audio.volume = Random.Range(0.2f, 0.4f);
+            audio.pitch = Random.Range(0.8f, 1.1f);
+            audio.Play();
+        }
+        if (Input.GetAxis("Horizontal") != 0 && audio.isPlaying == false)
+        {
+            audio.volume = Random.Range(0.2f, 0.4f);
+            audio.pitch = Random.Range(0.8f, 1.1f);
+            audio.Play();
+        }
+
 
         Dash();
     }
@@ -36,21 +52,26 @@ public class MovementNikel : MonoBehaviour
             {
                 transform.Translate(distDash, 0, 0);
                 dash.emitting = true;
+                FindObjectOfType<AudioManager>().Play("dash");
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
                 transform.Translate(-distDash, 0, 0);
                 dash.emitting = true;
+                FindObjectOfType<AudioManager>().Play("dash");
             }
             if (Input.GetAxis("Vertical") > 0)
             {
                 transform.Translate(0, 0, distDash);
                 dash.emitting = true;
+                FindObjectOfType<AudioManager>().Play("dash");
             }
             if (Input.GetAxis("Vertical") < 0)
             {
                 transform.Translate(0, 0, -distDash);
                 dash.emitting = true;
+                FindObjectOfType<AudioManager>().Play("dash");
+
             }
 
         }
