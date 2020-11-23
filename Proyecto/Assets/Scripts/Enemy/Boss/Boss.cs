@@ -12,8 +12,8 @@ public class Boss : MonoBehaviour
     private int maxHealth;
     [SerializeField] int health = 500;
     //public GameObject deathEffect;
-    public bool isInvulnerable = false;
-    public bool canMove = true;
+    private bool isInvulnerable = false;
+    private bool canMove = true;
     float iniMoveSpeed;
 
     //float distancia;
@@ -21,8 +21,11 @@ public class Boss : MonoBehaviour
     [SerializeField] float startWaitTime;
     [SerializeField] private float recoveryTime;
     [SerializeField] private float dashTime;
+    [SerializeField] private float bossAttack;
 
     private int fase = 1;
+    [SerializeField] GameObject bulletsFase1;
+    [SerializeField] GameObject bulletsFase2;
 
     void Start()
     {
@@ -44,11 +47,13 @@ public class Boss : MonoBehaviour
 
             waitTime -= Time.deltaTime;
 
+
             if (waitTime <= 0)
             {
+                moveSpeed = 50;
                 if (fase == 1)
                 {
-                    canMove = false;
+                    //canMove = false;
                     StartCoroutine(Fase1());
                 }
                 if (fase == 2)
@@ -96,15 +101,17 @@ public class Boss : MonoBehaviour
 
     public IEnumerator Fase1()
     {
-        moveSpeed = 50;
+        //moveSpeed = 50;
 
-        yield return new WaitForSeconds(dashTime);
+        //yield return new WaitForSeconds(dashTime);
 
         moveSpeed = iniMoveSpeed;
+        Debug.Log("1");
 
         yield return new WaitForSeconds(recoveryTime);
 
         canMove = true;
+        Debug.Log("2");
     }
 
     public IEnumerator Fase2()
@@ -125,9 +132,13 @@ public class Boss : MonoBehaviour
 
     }
 
-    void BulletsFase1()
+    public IEnumerator BulletsFase1()
     {
+        bulletsFase1.SetActive(true);
 
+        yield return new WaitForSeconds(bossAttack);
+
+        bulletsFase1.SetActive(false);
     }
 
     void RangedFase2()
@@ -135,9 +146,13 @@ public class Boss : MonoBehaviour
 
     }
 
-    void BulletsFase2()
+    public IEnumerator BulletsFase2()
     {
+        bulletsFase2.SetActive(true);
 
+        yield return new WaitForSeconds(bossAttack);
+
+        bulletsFase2.SetActive(false);
     }
 
     void Die()
