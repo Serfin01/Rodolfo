@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 8934841377998633608}
+  audioMixer: {fileID: 24100000, guid: 9241ef001ece0c94b883096ccaaa81f7, type: 2}
   transitionTime: 1
+  resolutionDropdown: {fileID: 0}
 --- !u!1 &8934841377964082110
 GameObject:
   m_ObjectHideFlags: 0
