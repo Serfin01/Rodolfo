@@ -2471,8 +2471,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1123030916}
   - component: {fileID: 1123030915}
-  - component: {fileID: 1123030917}
   - component: {fileID: 1123030918}
+  - component: {fileID: 1123030917}
+  - component: {fileID: 1123030919}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2516,7 +2517,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123030914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 995e9822f93f65b49a8949c98244cd7a, type: 3}
   m_Name: 
@@ -2547,6 +2548,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1123030919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123030914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db784507e05a494b9dc052f4dbec0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  startWaitTime: 3
+  dashTime: 0.3
+  bossAttack: 0
+  bulletsFase1: {fileID: 0}
+  bulletsFase2: {fileID: 0}
 --- !u!1 &1146725493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,7 +3651,7 @@ PrefabInstance:
     - target: {fileID: 385906401192669563, guid: f6d1355b03023584a8c26f57545f1d1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.2
+      value: -6.67
       objectReference: {fileID: 0}
     - target: {fileID: 385906401192669563, guid: f6d1355b03023584a8c26f57545f1d1f,
         type: 3}
@@ -3642,7 +3661,7 @@ PrefabInstance:
     - target: {fileID: 385906401192669563, guid: f6d1355b03023584a8c26f57545f1d1f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.932237
+      value: 6.93
       objectReference: {fileID: 0}
     - target: {fileID: 385906401192669563, guid: f6d1355b03023584a8c26f57545f1d1f,
         type: 3}
