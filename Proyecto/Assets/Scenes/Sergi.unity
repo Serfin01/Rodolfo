@@ -2485,6 +2485,7 @@ MonoBehaviour:
   bulletsFase2: {fileID: 4397454663930589055, guid: c38b0edbab73062449d1a6a71d3a582b,
     type: 3}
   health: 500
+  punch: {fileID: 5655736305663846146, guid: b5ca8b5d652f23542a16ddeb463fcdfd, type: 3}
 --- !u!1 &1146725493
 GameObject:
   m_ObjectHideFlags: 0

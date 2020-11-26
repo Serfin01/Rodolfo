@@ -28,6 +28,8 @@ public class BossPrueba : MonoBehaviour
     [SerializeField] int health = 500;
     private int maxHealth;
 
+    [SerializeField] GameObject punch;
+
     void Start()
     {
         trPlayer = GameObject.FindGameObjectWithTag("Player").transform;
@@ -71,6 +73,7 @@ public class BossPrueba : MonoBehaviour
                     lastFase = fase;
                 }
                 Debug.Log("ranged1");
+                RangedFase1();
                 break;
             case 3:
                 //bullet1
@@ -87,7 +90,8 @@ public class BossPrueba : MonoBehaviour
                 {
                     lastFase = fase;
                 }
-                Debug.Log("raned2");
+                Debug.Log("ranged2");
+                RangedFase2();
                 break;
             case 5:
                 //bullet2
@@ -174,8 +178,7 @@ public class BossPrueba : MonoBehaviour
 
     void RangedFase1()
     {
-
-
+        Instantiate(punch, transform.position, transform.rotation);
         cooldown = 1;
         fase = 6;
     }
