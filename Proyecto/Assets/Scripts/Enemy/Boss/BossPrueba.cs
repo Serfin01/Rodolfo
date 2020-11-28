@@ -123,6 +123,7 @@ public class BossPrueba : MonoBehaviour
                         if (WaitTime())
                         {
                             fase = 3;
+                            Debug.Log("estoy caso2");
                         }
                         break;
                     case 3:
