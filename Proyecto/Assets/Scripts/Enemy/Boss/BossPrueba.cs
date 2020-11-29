@@ -17,8 +17,10 @@ public class BossPrueba : MonoBehaviour
     [SerializeField] float dashTime;
 
     [SerializeField] private float bossAttack;
-    [SerializeField] GameObject bulletsFase1;
-    [SerializeField] GameObject bulletsFase2;
+    //[SerializeField] GameObject bulletsFase1;
+    //[SerializeField] GameObject bulletsFase2;
+    [SerializeField] ParticleSystem bulletsFase1;
+    [SerializeField] ParticleSystem bulletsFase2;
 
     bool canDash = true;
     int lastFase;
@@ -36,6 +38,7 @@ public class BossPrueba : MonoBehaviour
         iniMoveSpeed = moveSpeed;
         waitTime = startWaitTime;
         maxHealth = health;
+        bulletsFase1.Stop();
     }
 
     // Update is called once per frame
@@ -186,11 +189,13 @@ public class BossPrueba : MonoBehaviour
 
     public IEnumerator BulletsFase1()
     {
-        bulletsFase1.SetActive(true);
+        //bulletsFase1.SetActive(true);
+        bulletsFase1.Play();
 
         yield return new WaitForSeconds(bossAttack);
 
-        bulletsFase1.SetActive(false);
+        bulletsFase1.Stop();
+        //bulletsFase1.SetActive(false);
 
         cooldown = 1;
         fase = 6;
@@ -206,11 +211,11 @@ public class BossPrueba : MonoBehaviour
 
     public IEnumerator BulletsFase2()
     {
-        bulletsFase2.SetActive(true);
+        //bulletsFase2.SetActive(true);
 
         yield return new WaitForSeconds(bossAttack);
 
-        bulletsFase2.SetActive(false);
+        //bulletsFase2.SetActive(false);
 
         cooldown = 1;
         fase = 6;

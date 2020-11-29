@@ -2481,8 +2481,8 @@ MonoBehaviour:
   startWaitTime: 3
   dashTime: 0.3
   bossAttack: 2
-  bulletsFase1: {fileID: 1232645866}
-  bulletsFase2: {fileID: 4397454663930589055, guid: c38b0edbab73062449d1a6a71d3a582b,
+  bulletsFase1: {fileID: 1232645868}
+  bulletsFase2: {fileID: 4397454663930589049, guid: c38b0edbab73062449d1a6a71d3a582b,
     type: 3}
   health: 500
   punch: {fileID: 5655736305663846146, guid: b5ca8b5d652f23542a16ddeb463fcdfd, type: 3}
@@ -2785,9 +2785,9 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213664495}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1232645866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4397454663930589055, guid: 4edf08f24a18775448baa87d0c238fb3,
+--- !u!198 &1232645868 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4397454663930589049, guid: 4edf08f24a18775448baa87d0c238fb3,
     type: 3}
   m_PrefabInstance: {fileID: 1406839650}
   m_PrefabAsset: {fileID: 0}
@@ -2938,6 +2938,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1123030916}
     m_Modifications:
+    - target: {fileID: 4397454663930589049, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397454663930589049, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4397454663930589050, guid: 4edf08f24a18775448baa87d0c238fb3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2997,6 +3007,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bullet_boss_semicircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397454663930589055, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458139543453187129, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458139543453187129, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717754708172766250, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717754708172766250, guid: 4edf08f24a18775448baa87d0c238fb3,
+        type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4edf08f24a18775448baa87d0c238fb3, type: 3}
