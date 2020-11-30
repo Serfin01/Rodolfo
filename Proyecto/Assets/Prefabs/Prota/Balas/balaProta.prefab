@@ -4811,7 +4811,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 30
   damage: 10
-  charco: {fileID: 8738488181077831942, guid: 202ee216c0f88ec4cb95d6597238a48d, type: 3}
 --- !u!135 &7333443667801198375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4844,7 +4843,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -4896,7 +4895,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.108333334
       inSlope: 0
       outSlope: 0
       tangentMode: 0

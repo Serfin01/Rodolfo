@@ -8,6 +8,7 @@ TagManager:
   - BulletEnemy
   - Limit
   - Shield
+  - LevelLoader
   layers:
   - Default
   - TransparentFX

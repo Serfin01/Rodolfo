@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossPrueba : MonoBehaviour
+public class BossPrueba : Enemy
 {
     Transform trPlayer;
     [SerializeField] float moveSpeed = 3.0f;
@@ -27,7 +27,6 @@ public class BossPrueba : MonoBehaviour
     float cooldown;
     bool ranged = false;
 
-    [SerializeField] int health = 500;
     private int maxHealth;
 
     [SerializeField] GameObject punch;
@@ -85,7 +84,6 @@ public class BossPrueba : MonoBehaviour
                     lastFase = fase;
                 }
                 Debug.Log("bullet1");
-                StartCoroutine(BulletsFase1());
                 break;
             case 4:
                 //raned2
@@ -126,7 +124,7 @@ public class BossPrueba : MonoBehaviour
                         if (WaitTime())
                         {
                             fase = 3;
-                            Debug.Log("estoy caso2");
+                            StartCoroutine(BulletsFase1());
                         }
                         break;
                     case 3:

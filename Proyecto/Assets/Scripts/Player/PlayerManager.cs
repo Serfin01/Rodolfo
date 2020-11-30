@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : Player
 {
@@ -16,6 +17,7 @@ public class PlayerManager : Player
         if(health <= 0)
         {
             Debug.Log("maricon");
+            SceneManager.LoadScene(4);
             //Destroy(this.gameObject);
         }
     }
