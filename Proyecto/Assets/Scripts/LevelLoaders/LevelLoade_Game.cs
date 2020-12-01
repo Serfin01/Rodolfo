@@ -6,12 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoade_Game : MonoBehaviour
 {
 	public Animator transition;
-
-	public float transitionTime = 1f;
-
-	public Enemy E_health;
-	public Player P_health;
-
+	public int transitionTime;
 
 	void Update()
 	{
@@ -20,10 +15,10 @@ public class LevelLoade_Game : MonoBehaviour
 
 	public void LoadNextLevel()
 	{
-		StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+		StartCoroutine(LoadLevel());
 	}
 
-	IEnumerator LoadLevel(int levelIndex)
+	IEnumerator LoadLevel()
 	{
 		transition.SetTrigger("Start");
 
