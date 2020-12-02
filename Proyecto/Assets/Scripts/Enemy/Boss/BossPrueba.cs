@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossPrueba : Enemy
 {
@@ -30,6 +31,8 @@ public class BossPrueba : Enemy
     private int maxHealth;
 
     [SerializeField] GameObject punch;
+    public Animator transition;
+    public int transitionTime;
 
     void Start()
     {
@@ -47,6 +50,11 @@ public class BossPrueba : Enemy
         {
             transform.LookAt(trPlayer);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        }
+        if (health <= 0)
+        {
+            Debug.Log("boss muerto");
+            Die();
         }
 
         switch (fase)
@@ -221,6 +229,21 @@ public class BossPrueba : Enemy
 
     void Die()
     {
-        Destroy(gameObject);
+
+        LoadNextLevel();
+        //Destroy(gameObject);
+    }
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        Debug.Log("se carga la sieguiente escena");
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(5);
     }
 }

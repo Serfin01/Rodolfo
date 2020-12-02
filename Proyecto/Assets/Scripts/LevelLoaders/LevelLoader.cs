@@ -32,4 +32,9 @@ public class LevelLoader : MonoBehaviour
 		SceneManager.LoadScene(levelIndex);
 	}
 
+	public void GoToMenu()
+    {
+		SceneManager.LoadScene(1);
+	}
+
 }

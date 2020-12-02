@@ -10,7 +10,7 @@ public class MovementNikel : MonoBehaviour
     [SerializeField] int distDash;
     [SerializeField] TrailRenderer dash;
     public AudioSource audio;
-    public static bool isGodModOn = false;
+    public static bool isGodModOn = true;
     public CapsuleCollider colider;
     public GameObject canvas;
     public Rigidbody r_body;
@@ -21,14 +21,19 @@ public class MovementNikel : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal")* speed * Time.deltaTime,0,Input.GetAxis("Vertical")*speed* Time.deltaTime);
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         moveDirection = Vector3.ClampMagnitude(moveDirection, 1);
 
-        transform.Translate(moveDirection);
+        //transform.Translate(moveDirection);
+        r_body.AddForce(moveDirection * speed, ForceMode.VelocityChange);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
 
         if (Input.GetAxis("Vertical") != 0 && audio.isPlaying == false)
         {
