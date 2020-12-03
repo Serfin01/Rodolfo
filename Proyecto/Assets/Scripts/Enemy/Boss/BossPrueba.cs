@@ -34,6 +34,13 @@ public class BossPrueba : Enemy
     public Animator transition;
     public int transitionTime;
 
+    bool melee = true;
+    [SerializeField] int damage;
+
+    float distancia;
+    [SerializeField] private float recoveryTime;
+    int iniDamage;
+
     void Start()
     {
         trPlayer = GameObject.FindGameObjectWithTag("Player").transform;
@@ -41,11 +48,14 @@ public class BossPrueba : Enemy
         waitTime = startWaitTime;
         maxHealth = health;
         bulletsFase1.Stop();
+        iniDamage = damage;
     }
 
     // Update is called once per frame
     void Update()
     {
+        distancia = Vector3.Distance(this.transform.position, trPlayer.position);
+
         if (canMove == true)
         {
             transform.LookAt(trPlayer);
@@ -82,7 +92,7 @@ public class BossPrueba : Enemy
                 {
                     lastFase = fase;
                 }
-                Debug.Log("ranged1");
+                //Debug.Log("ranged1");
                 RangedFase1();
                 break;
             case 3:
@@ -91,7 +101,7 @@ public class BossPrueba : Enemy
                 {
                     lastFase = fase;
                 }
-                Debug.Log("bullet1");
+                //Debug.Log("bullet1");
                 break;
             case 4:
                 //raned2
@@ -99,7 +109,7 @@ public class BossPrueba : Enemy
                 {
                     lastFase = fase;
                 }
-                Debug.Log("ranged2");
+                //Debug.Log("ranged2");
                 RangedFase2();
                 break;
             case 5:
@@ -108,8 +118,7 @@ public class BossPrueba : Enemy
                 {
                     lastFase = fase;
                 }
-                Debug.Log("bullet2");
-                StartCoroutine(BulletsFase2());
+                //Debug.Log("bullet2");
                 break;
             case 6:
                 switch (lastFase)
@@ -145,6 +154,7 @@ public class BossPrueba : Enemy
                         if (WaitTime())
                         {
                             fase = 5;
+                            StartCoroutine(BulletsFase2());
                         }
                         break;
                     case 5:
@@ -195,6 +205,7 @@ public class BossPrueba : Enemy
 
     public IEnumerator BulletsFase1()
     {
+        melee = false;
         //bulletsFase1.SetActive(true);
         bulletsFase1.Play();
 
@@ -202,29 +213,66 @@ public class BossPrueba : Enemy
 
         bulletsFase1.Stop();
         //bulletsFase1.SetActive(false);
-
+        melee = true;
         cooldown = 1;
         fase = 6;
     }
 
     void RangedFase2()
     {
-
+        moveSpeed = 50;
+        melee = false;
+        if (distancia <= 0.2f)
+        {
+            canMove = false;
+            StartCoroutine(DashExplosion());
+        }
+        
 
         cooldown = 1;
         fase = 6;
     }
 
+    public IEnumerator DashExplosion()
+    {
+        moveSpeed = iniMoveSpeed;
+
+        yield return new WaitForSeconds(recoveryTime);
+
+        melee = true;
+        Debug.Log("explosion");
+        canMove = true;
+        damage = iniDamage;
+    }
+
     public IEnumerator BulletsFase2()
     {
+        melee = false;
         //bulletsFase2.SetActive(true);
+        bulletsFase2.Play();
 
         yield return new WaitForSeconds(bossAttack);
 
+        bulletsFase2.Stop();
         //bulletsFase2.SetActive(false);
-
+        melee = true;
         cooldown = 1;
         fase = 6;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (melee)
+            {
+                if (other.GetComponent<PlayerAbilities>().canBeDamaged)
+                {
+                    other.GetComponent<Player>().Damaged(damage);
+                }
+            }
+        }
+        
     }
 
     void Die()
@@ -233,6 +281,7 @@ public class BossPrueba : Enemy
         LoadNextLevel();
         //Destroy(gameObject);
     }
+
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel());
@@ -241,7 +290,7 @@ public class BossPrueba : Enemy
     IEnumerator LoadLevel()
     {
         transition.SetTrigger("Start");
-        Debug.Log("se carga la sieguiente escena");
+        //Debug.Log("se carga la sieguiente escena");
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(5);
