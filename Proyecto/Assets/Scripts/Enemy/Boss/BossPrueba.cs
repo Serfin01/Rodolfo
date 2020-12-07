@@ -43,6 +43,7 @@ public class BossPrueba : Enemy
     int iniDamage;
     
     bool explosion = true;
+    bool speedBoost = true;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class BossPrueba : Enemy
         waitTime = startWaitTime;
         maxHealth = health;
         bulletsFase1.Stop();
+        bulletsFase2.Stop();
         iniDamage = damage;
     }
 
@@ -223,8 +225,12 @@ public class BossPrueba : Enemy
 
     void RangedFase2()
     {
-        moveSpeed = 50;
-        melee = false;
+        if (speedBoost)
+        {
+            moveSpeed = 50;
+            melee = false;
+            speedBoost = false;
+        }
         if (distancia <= 0.2f)
         {
             canMove = false;
@@ -234,12 +240,7 @@ public class BossPrueba : Enemy
                 StartCoroutine(DashExplosion());
                 explosion = false;
             }
-            
-            
         }
-        
-
-        
     }
 
     public IEnumerator DashExplosion()
@@ -254,6 +255,7 @@ public class BossPrueba : Enemy
         damage = iniDamage;
 
         explosion = true;
+        speedBoost = true;
         cooldown = 1;
         fase = 6;
     }
@@ -263,7 +265,7 @@ public class BossPrueba : Enemy
         melee = false;
         //bulletsFase2.SetActive(true);
         bulletsFase2.Play();
-
+        Debug.Log("balas circulo");
         yield return new WaitForSeconds(bossAttack);
 
         bulletsFase2.Stop();
