@@ -38,8 +38,11 @@ public class BossPrueba : Enemy
     [SerializeField] int damage;
 
     float distancia;
+    [Header("papa")]
     [SerializeField] private float recoveryTime;
     int iniDamage;
+    
+    bool explosion = true;
 
     void Start()
     {
@@ -54,7 +57,7 @@ public class BossPrueba : Enemy
     // Update is called once per frame
     void Update()
     {
-        distancia = Vector3.Distance(this.transform.position, trPlayer.position);
+        distancia = Vector3.Distance(transform.position, trPlayer.position);
 
         if (canMove == true)
         {
@@ -225,12 +228,18 @@ public class BossPrueba : Enemy
         if (distancia <= 0.2f)
         {
             canMove = false;
-            StartCoroutine(DashExplosion());
+            Debug.Log("moverse");
+            if (explosion)
+            {
+                StartCoroutine(DashExplosion());
+                explosion = false;
+            }
+            
+            
         }
         
 
-        cooldown = 1;
-        fase = 6;
+        
     }
 
     public IEnumerator DashExplosion()
@@ -243,6 +252,10 @@ public class BossPrueba : Enemy
         Debug.Log("explosion");
         canMove = true;
         damage = iniDamage;
+
+        explosion = true;
+        cooldown = 1;
+        fase = 6;
     }
 
     public IEnumerator BulletsFase2()
