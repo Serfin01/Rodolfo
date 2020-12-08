@@ -603,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &216706763
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2318,12 +2318,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 857289120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e70d3147f18b4944a9d11997c9e2edd, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ace8991d1e1059469ea8fce1bb1f59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 561938855944987500, guid: f6d1355b03023584a8c26f57545f1d1f, type: 3}
-  bola: {fileID: 216706762}
-  shotDuration: 0
+  cooldown: 3
 --- !u!1 &895822282
 GameObject:
   m_ObjectHideFlags: 0

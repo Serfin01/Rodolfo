@@ -64,9 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e70d3147f18b4944a9d11997c9e2edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shield: {fileID: 0}
-  bola: {fileID: 0}
-  shotDuration: 0
+  duration: 3
 --- !u!54 &7134384551821716035
 Rigidbody:
   m_ObjectHideFlags: 0
