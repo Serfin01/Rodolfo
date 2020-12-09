@@ -7,7 +7,7 @@ public class PlayerManager : Player
 {
     public Animator transition;
     public int transitionTime;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,13 @@ public class PlayerManager : Player
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("maricon");
             LoadNextLevel();
             //Destroy(this.gameObject);
         }
+        healthBar.SetHealth(currentHealth);
     }
 
     public void LoadNextLevel()

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateShield : MonoBehaviour
 {
     [SerializeField] GameObject shield;
+
+    [SerializeField] Image overlayCooldown;
     //[SerializeField] GameObject bola;
 
     //private bool canShoot;
@@ -25,6 +28,7 @@ public class CreateShield : MonoBehaviour
     void Update()
     {
         cooldown -= Time.deltaTime;
+        overlayCooldown.GetComponent<Image>().fillAmount = cooldown;
         myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(myRay, out hit))
         {
@@ -41,7 +45,6 @@ public class CreateShield : MonoBehaviour
                 }
             }
         }
-
     }
     
     void InstantiateShield()

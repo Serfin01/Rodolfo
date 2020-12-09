@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] protected int health = 100;
-    // Start is called before the first frame update
+    [SerializeField] protected int maxHealth = 100;
+    [SerializeField] protected int currentHealth;
+
+    public HealthBar healthBar;
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
     void Start()
     {
-
+        //currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void Damaged(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
+
+        //healthBar.SetHealth(currentHealth);
     }
 }
