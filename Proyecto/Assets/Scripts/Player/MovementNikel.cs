@@ -15,22 +15,17 @@ public class MovementNikel : MonoBehaviour
     public GameObject canvas;
     public Rigidbody r_body;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
-        moveDirection = Vector3.ClampMagnitude(moveDirection, 1);
+        
 
         //transform.Translate(moveDirection);
-        r_body.AddForce(moveDirection * speed, ForceMode.VelocityChange);
+        //r_body.AddForce(moveDirection * speed, ForceMode.VelocityChange);
+        r_body.velocity = moveDirection * speed * Time.deltaTime;
     }
-    // Update is called once per frame
+
     void Update()
     {
         

@@ -595,6 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216706766}
   - component: {fileID: 216706765}
+  - component: {fileID: 216706767}
   - component: {fileID: 216706764}
   - component: {fileID: 216706763}
   m_Layer: 0
@@ -678,6 +679,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216706767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216706762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8a98742e653114f8e5d52b5aa8759e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 857289124}
 --- !u!1 &217809921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab6962c7cfa514aaea3b858862f0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 900
   distDash: 5
   dash: {fileID: 1524734207}
   audio: {fileID: 857289129}
@@ -2806,7 +2820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1123030915
 CapsuleCollider:
   m_ObjectHideFlags: 0
