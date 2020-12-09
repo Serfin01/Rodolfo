@@ -38,5 +38,9 @@ public class Bullet : MonoBehaviour
             }
             */
         }
+        if (other.CompareTag("Limit"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

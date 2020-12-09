@@ -5,6 +5,7 @@ using System;
 
 public class Scrolls : MonoBehaviour
 {
+    /*
     [SerializeField] GameObject[] typeScrolls;
     //private int random;
 
