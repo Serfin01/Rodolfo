@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class BossPrueba : Enemy
 {
-    Transform trPlayer;
+    public Transform trPlayer;
     [SerializeField] float moveSpeed = 3.0f;
     private bool canMove = true;
 
@@ -45,9 +46,10 @@ public class BossPrueba : Enemy
     bool explosion = true;
     bool speedBoost = true;
 
+
     void Start()
     {
-        trPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        //trPlayer = GameObject.FindGameObjectWithTag("Player").transform;
         iniMoveSpeed = moveSpeed;
         waitTime = startWaitTime;
         maxHealth = health;
@@ -59,6 +61,8 @@ public class BossPrueba : Enemy
     // Update is called once per frame
     void Update()
     {
+        NavMeshAgent agente = GetComponent<NavMeshAgent>();
+        agente.SetDestination(trPlayer.position);
         distancia = Vector3.Distance(transform.position, trPlayer.position);
 
         if (canMove == true)

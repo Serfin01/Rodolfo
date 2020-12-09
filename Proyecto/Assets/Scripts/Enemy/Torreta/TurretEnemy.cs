@@ -66,6 +66,11 @@ public class TurretEnemy : Enemy
         }
 
         fireCountdown -= Time.deltaTime;
+
+        if(health <= 0)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 
     void Shoot()

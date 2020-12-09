@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class FollowEnemy : Enemy
 {
     Transform trPlayer;
@@ -9,6 +9,7 @@ public class FollowEnemy : Enemy
     private float moveSpeed = 3.0f;
     [SerializeField] Vector3 range;
     [SerializeField] float gzRange = 10;
+    public int damage;
 
     // Use this for initialization
     void Start()
@@ -21,17 +22,23 @@ public class FollowEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
+        NavMeshAgent agente = GetComponent<NavMeshAgent>();
+        agente.SetDestination(trPlayer.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(trPlayer.position - transform.position), rotSpeed * Time.deltaTime);
 
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
         
-        
+        if(health <= 0)
+        {
+            GameObject.Destroy(gameObject);
+        }
         
     }
 
     void Damage()
     {
         Debug.Log("la picadura de la cobra gei");
+
     }
 
     void OnDrawGizmosSelected()
@@ -45,7 +52,7 @@ public class FollowEnemy : Enemy
         if (other.CompareTag("Player"))
         {
             Damage();
+            other.GetComponent<Player>().Damaged(damage);
         }
-        
     }
 }
