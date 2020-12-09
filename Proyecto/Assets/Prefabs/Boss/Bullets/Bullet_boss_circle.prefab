@@ -4823,6 +4823,7 @@ GameObject:
   - component: {fileID: 4397454663930589050}
   - component: {fileID: 4397454663930589049}
   - component: {fileID: 4397454663930589048}
+  - component: {fileID: 2680000944229760077}
   m_Layer: 0
   m_Name: Bullet_boss_circle
   m_TagString: Untagged
@@ -9626,6 +9627,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2680000944229760077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397454663930589055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bcec1416403a64db69e7f0ae93ef7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  bulletForce: 0
 --- !u!1 &5292741912993861183
 GameObject:
   m_ObjectHideFlags: 0
