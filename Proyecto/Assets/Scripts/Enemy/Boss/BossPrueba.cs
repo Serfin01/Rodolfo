@@ -45,6 +45,7 @@ public class BossPrueba : Enemy
     
     bool explosion = true;
     bool speedBoost = true;
+    NavMeshAgent agente;
 
 
     void Start()
@@ -56,12 +57,12 @@ public class BossPrueba : Enemy
         bulletsFase1.Stop();
         bulletsFase2.Stop();
         iniDamage = damage;
+        agente = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        NavMeshAgent agente = GetComponent<NavMeshAgent>();
         agente.SetDestination(trPlayer.position);
         distancia = Vector3.Distance(transform.position, trPlayer.position);
 

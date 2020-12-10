@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Laser : MonoBehaviour
 {
@@ -9,16 +10,22 @@ public class Laser : MonoBehaviour
     private bool canShoot;
     [SerializeField] float shotDuration;
 
+    private bool isCooldown = false;
+    private float cooldown;
+    [SerializeField] float iniCooldown;
+    [SerializeField] Image imageCooldown;
+
     void Start()
     {
         rayo.SetActive(false);
+        imageCooldown.fillAmount = 0.0f;
     }
 
     void Update()
     {
         if (Input.GetKeyDown("4"))
         {
-            StartCoroutine(Shot());
+            UseSpell();
         }
 
         if (canShoot == true)
@@ -29,6 +36,40 @@ public class Laser : MonoBehaviour
         {
             rayo.SetActive(false);
         }
+
+        if (isCooldown)
+        {
+            ApplyCooldown();
+        }
+    }
+
+    void ApplyCooldown()
+    {
+        cooldown -= Time.deltaTime;
+
+        if(cooldown < 0.0f)
+        {
+            isCooldown = false;
+            imageCooldown.fillAmount = 0.0f;
+        }
+        else
+        {
+            imageCooldown.fillAmount = cooldown / iniCooldown;
+        }
+    }
+
+    public void UseSpell()
+    {
+        if (isCooldown)
+        {
+            //StartCoroutine(Shot());
+        }
+        else
+        {
+            StartCoroutine(Shot());
+            //isCooldown = true;
+            cooldown = iniCooldown;
+        }
     }
 
     private IEnumerator Shot()
@@ -37,6 +78,8 @@ public class Laser : MonoBehaviour
         Debug.Log("on");
         yield return new WaitForSeconds(shotDuration);
         canShoot = false;
+        isCooldown = true;
+        //overlayCooldown.GetComponent<Image>().fillAmount = 0.5;
         Debug.Log("off");
     }
 }

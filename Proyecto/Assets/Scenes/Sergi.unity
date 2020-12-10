@@ -1963,6 +1963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayo: {fileID: 567770130}
   shotDuration: 2
+  iniCooldown: 2
+  imageCooldown: {fileID: 1071651279}
 --- !u!81 &857289128
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2080,8 +2082,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 561938855944987500, guid: f6d1355b03023584a8c26f57545f1d1f, type: 3}
-  overlayCooldown: {fileID: 1345217797}
-  cooldown: 3
+  iniCooldown: 2
+  imageCooldown: {fileID: 1345217797}
 --- !u!1 &895822282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,6 +2660,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065161574}
   m_CullTransparentMesh: 0
+--- !u!114 &1071651279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8001612887918092886, guid: a39b4be4a1f02544abcf02b72dc7a88b,
+    type: 3}
+  m_PrefabInstance: {fileID: 30258010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123030914
 GameObject:
   m_ObjectHideFlags: 0

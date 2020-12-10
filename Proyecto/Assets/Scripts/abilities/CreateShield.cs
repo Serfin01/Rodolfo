@@ -7,7 +7,7 @@ public class CreateShield : MonoBehaviour
 {
     [SerializeField] GameObject shield;
 
-    [SerializeField] Image overlayCooldown;
+    //[SerializeField] Image overlayCooldown;
     //[SerializeField] GameObject bola;
 
     //private bool canShoot;
@@ -16,37 +16,67 @@ public class CreateShield : MonoBehaviour
     Ray myRay;
     RaycastHit hit;
 
-    [SerializeField] float cooldown = 3;
-    float iniCooldown;
+    //[SerializeField] float cooldown = 1;
+
+    private bool isCooldown = false;
+    private float cooldown;
+    [SerializeField] float iniCooldown;
+    [SerializeField] Image imageCooldown;
+    //float iniCooldown;
 
     void Start()
     {
         //shield.SetActive(false);
-        iniCooldown = cooldown;
+        imageCooldown.fillAmount = 0.0f;
     }
 
     void Update()
     {
-        cooldown -= Time.deltaTime;
-        overlayCooldown.GetComponent<Image>().fillAmount = cooldown;
         myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        if (isCooldown)
+        {
+            ApplyCooldown();
+        }
+
         if (Physics.Raycast(myRay, out hit))
         {
-            if (cooldown <= 0)
+            if (Input.GetKeyDown("3"))
             {
-                if (Input.GetKeyDown("3"))
-                {
-                    //Instantiate(shield, hit.point, Quaternion.identity);
-                    //Instantiate(bola, hit.point, Quaternion.identity);
-                    //Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    //Instantiate(shield, new Vector3(cursorPos.x, 0, cursorPos.z), Quaternion.identity);
-                    //cooldown = iniCooldown;
-                    InstantiateShield();
-                }
+                UseSpell();
             }
         }
     }
-    
+
+    void ApplyCooldown()
+    {
+        cooldown -= Time.deltaTime;
+
+        if (cooldown < 0.0f)
+        {
+            isCooldown = false;
+            imageCooldown.fillAmount = 0.0f;
+        }
+        else
+        {
+            imageCooldown.fillAmount = cooldown / iniCooldown;
+        }
+    }
+
+    public void UseSpell()
+    {
+        if (isCooldown)
+        {
+            //StartCoroutine(Shot());
+        }
+        else
+        {
+            InstantiateShield();
+            isCooldown = true;
+            cooldown = iniCooldown;
+        }
+    }
+
     void InstantiateShield()
     {
         Instantiate(shield, hit.point, Quaternion.identity);

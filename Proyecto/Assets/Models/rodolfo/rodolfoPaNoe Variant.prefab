@@ -274,7 +274,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74ca6a1ec64ad2d40808cd41e3afb0c4,
         type: 3}
       propertyPath: m_Name
-      value: rodolfoPaNoe
+      value: rodolfoPaNoe Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ca6a1ec64ad2d40808cd41e3afb0c4, type: 3}
