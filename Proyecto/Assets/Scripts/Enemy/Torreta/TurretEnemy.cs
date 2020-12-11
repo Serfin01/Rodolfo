@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretEnemy : Enemy
 {
     private Transform target;
-    [SerializeField] GameObject boss;
+
     [Header("Attributes")]
 
     [SerializeField] float range = 15f;
@@ -70,7 +70,6 @@ public class TurretEnemy : Enemy
         if(health <= 0)
         {
             GameObject.Destroy(gameObject);
-            boss.SetActive(true);
         }
     }
 

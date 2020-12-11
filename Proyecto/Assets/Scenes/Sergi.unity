@@ -37,8 +37,13 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
+<<<<<<< HEAD
   m_Sun: {fileID: 2087624300}
   m_IndirectSpecularColor: {r: 0.1814103, g: 0.22703595, b: 0.3073868, a: 1}
+=======
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> parent of 56fe102... arreglillos tontos
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -71,7 +76,11 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
+<<<<<<< HEAD
     m_MixedBakeMode: 1
+=======
+    m_MixedBakeMode: 2
+>>>>>>> parent of 56fe102... arreglillos tontos
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -97,9 +106,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 557623bb58f4d6a45828807e45b3feff,
-    type: 2}
-  m_UseShadowmask: 0
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -921,7 +929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  boss: {fileID: 1123030914}
   range: 15
   fireRate: 1
   fireCountdown: 0
@@ -1326,7 +1333,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &337930788
 Transform:
@@ -1609,7 +1616,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!54 &785906758
 Rigidbody:
@@ -2381,7 +2388,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1038824253
 Transform:
@@ -2835,7 +2842,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1146725494
 Transform:
@@ -3014,7 +3021,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1189446156
 BoxCollider:
@@ -3418,7 +3425,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1476726553
 BoxCollider:
@@ -3695,7 +3702,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1592055890
 BoxCollider:
@@ -4172,7 +4179,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1673769674
 Transform:
@@ -4414,7 +4421,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1805437280
 BoxCollider:
@@ -4536,7 +4543,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1920391587
 Transform:
@@ -4990,6 +4997,7 @@ Transform:
 --- !u!4 &22683614008349830
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8281,6 +8289,8 @@ GameObject:
 --- !u!1001 &5511010794266602376
 PrefabInstance:
   m_ObjectHideFlags: 0
+=======
+>>>>>>> parent of 56fe102... arreglillos tontos
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 857289125}
@@ -8305,6 +8315,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.193
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1110385748571800678, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8330,11 +8341,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 52e5800ed87835047b059207f4d6bb78, type: 2}
+=======
+>>>>>>> parent of 56fe102... arreglillos tontos
     - target: {fileID: 3836595938933301257, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.033
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4465225049381135573, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8345,11 +8359,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 22e1788fbf82bc2478f9fbd6fce25688, type: 2}
+=======
+>>>>>>> parent of 56fe102... arreglillos tontos
     - target: {fileID: 4664149008705023760, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_Name
       value: rodolfoPaNoe
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4958585879727090956, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -8360,6 +8377,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.041
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 56fe102... arreglillos tontos
     - target: {fileID: 5472351161877673386, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8415,6 +8434,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5917663021441706807, guid: cbd63cea7a2b5e847a472aa85667188f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10494,3 +10514,7 @@ Transform:
   m_Father: {fileID: 6906943097928817567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbd63cea7a2b5e847a472aa85667188f, type: 3}
+>>>>>>> parent of 56fe102... arreglillos tontos
