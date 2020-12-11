@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 1
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -97,8 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 112000000, guid: 7d5fa81806a6fb042ba5d1a3c8caa745,
+    type: 2}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1274,7 +1275,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &337930788
 Transform:
@@ -1545,7 +1546,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!54 &785906758
 Rigidbody:
@@ -2218,7 +2219,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1038824253
 Transform:
@@ -2672,7 +2673,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1146725494
 Transform:
@@ -2782,7 +2783,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1189446156
 BoxCollider:
@@ -3040,7 +3041,7 @@ PrefabInstance:
     - target: {fileID: 8934841377152513923, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1551a1eb8505bbc4699a82787ed15818, type: 3}
@@ -3186,7 +3187,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1476726553
 BoxCollider:
@@ -3463,7 +3464,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1592055890
 BoxCollider:
@@ -3940,7 +3941,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1673769674
 Transform:
@@ -4149,7 +4150,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1805437280
 BoxCollider:
@@ -4271,7 +4272,7 @@ GameObject:
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1920391587
 Transform:
@@ -4746,6 +4747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagicCristals
       objectReference: {fileID: 0}
+    - target: {fileID: 1482694687539920934, guid: 2f0e7f1123e5c2343b352aace2b5d600,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2294661366459226780, guid: 2f0e7f1123e5c2343b352aace2b5d600,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4888,6 +4894,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigTree
       objectReference: {fileID: 0}
+    - target: {fileID: 1739369835289189492, guid: 13978230208e5764383efeb3237c670d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13978230208e5764383efeb3237c670d, type: 3}
 --- !u!4 &3275195216286649648 stripped
@@ -4963,6 +4974,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 3053797738300823462, guid: d556644bc42e5b04c9fa8c52f7222801,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d556644bc42e5b04c9fa8c52f7222801, type: 3}
 --- !u!1001 &3357846688075725895
@@ -4976,6 +4992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BigMush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338135296323352999, guid: 7a5c9ec57a0194940809e11632e73961,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6682854574405427997, guid: 7a5c9ec57a0194940809e11632e73961,
         type: 3}
@@ -5107,6 +5128,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks
       objectReference: {fileID: 0}
+    - target: {fileID: 2256396875737934790, guid: eb00426ad0310c14b89fc224546931ae,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb00426ad0310c14b89fc224546931ae, type: 3}
 --- !u!4 &4156734310824404319 stripped
@@ -5182,6 +5208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 5697632286214388518, guid: f965d66bda3958c4c8b6d12d8b6954fb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f965d66bda3958c4c8b6d12d8b6954fb, type: 3}
 --- !u!1001 &5272194313751885218
@@ -5250,6 +5281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Smallmush
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921322663674006087, guid: a63656fb520523845bf1d83ec8784de8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63656fb520523845bf1d83ec8784de8, type: 3}
@@ -5489,6 +5525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvioromentMedium
       objectReference: {fileID: 0}
+    - target: {fileID: 5226694006627447557, guid: 80406cbaf4ae07b419295791ac01f983,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80406cbaf4ae07b419295791ac01f983, type: 3}
 --- !u!1001 &7654233428929188647
@@ -5502,6 +5543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushMush
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804306246100966873, guid: b8a0667c754585f4b8feeeaf73cb75aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5325369940981155683, guid: b8a0667c754585f4b8feeeaf73cb75aa,
         type: 3}
@@ -5577,6 +5623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MiniMushMush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531592569005021688, guid: e0d8b3d817782aa4ca95051136807a02,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2164718489319523138, guid: e0d8b3d817782aa4ca95051136807a02,
         type: 3}
