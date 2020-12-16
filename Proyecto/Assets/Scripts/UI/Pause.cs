@@ -7,6 +7,7 @@ public class Pause : MonoBehaviour
     public static bool isGamePaused = false;
 
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Animator pergAbajo;
 
     void Update()
     {
@@ -23,7 +24,7 @@ public class Pause : MonoBehaviour
         }
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -32,6 +33,7 @@ public class Pause : MonoBehaviour
 
     void PauseGame()
     {
+
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
