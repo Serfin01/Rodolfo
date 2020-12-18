@@ -234,6 +234,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadTitleScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1854770526184138093, guid: a39b4be4a1f02544abcf02b72dc7a88b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 3678988899872962217, guid: a39b4be4a1f02544abcf02b72dc7a88b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2035,7 +2040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4364a19c093e5f4f8a14751388df132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
+  mixerGroup: {fileID: 24300002, guid: 9241ef001ece0c94b883096ccaaa81f7, type: 2}
   sounds:
   - name: dash
     clip: {fileID: 8300000, guid: 3c966b1e22eed984c82dff5a2e3f9953, type: 3}
