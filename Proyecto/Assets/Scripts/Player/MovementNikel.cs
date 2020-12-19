@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementNikel : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class MovementNikel : MonoBehaviour
     public CapsuleCollider colider;
     public GameObject canvas;
     public Rigidbody r_body;
+    PlayerControls controls;
+
+    void Awake()
+    {
+        controls = new PlayerControls();
+    }
 
     private void FixedUpdate()
     {
