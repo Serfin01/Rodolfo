@@ -17,13 +17,39 @@ public class MovementNikel : MonoBehaviour
     public Rigidbody r_body;
     PlayerControls controls;
 
+    Vector3 move;
+
     void Awake()
     {
         controls = new PlayerControls();
+
+        controls.Gameplay.Move.performed += cntxt => move = cntxt.ReadValue<Vector3>();
+        controls.Gameplay.Move.canceled += cntxt => move = Vector3.zero;
+    }
+
+    private void OnEnable()
+    {
+        //controls.Gameplay.Move.performed += HandleMove;
+        //controls.Gameplay.Move.Enable();
+        controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
+
+    private void HandleMove(InputAction.CallbackContext context)
+    {
+        /*
+        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        r_body.velocity = moveDirection * speed * Time.deltaTime;
+        */
     }
 
     private void FixedUpdate()
     {
+        /*
         moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
         
@@ -31,11 +57,13 @@ public class MovementNikel : MonoBehaviour
         //transform.Translate(moveDirection);
         //r_body.AddForce(moveDirection * speed, ForceMode.VelocityChange);
         r_body.velocity = moveDirection * speed * Time.deltaTime;
+        */
     }
 
     void Update()
     {
-        
+        moveDirection = new Vector3(move.x * 5, 0, move.y * 5).normalized;
+        r_body.velocity = moveDirection;
 
         if (Input.GetAxis("Vertical") != 0 && audio.isPlaying == false)
         {
