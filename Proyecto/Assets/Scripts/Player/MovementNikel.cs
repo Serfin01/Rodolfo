@@ -17,14 +17,14 @@ public class MovementNikel : MonoBehaviour
     public Rigidbody r_body;
     PlayerControls controls;
 
-    Vector3 move;
+    Vector2 move;
 
     void Awake()
     {
         controls = new PlayerControls();
 
-        controls.Gameplay.Move.performed += cntxt => move = cntxt.ReadValue<Vector3>();
-        controls.Gameplay.Move.canceled += cntxt => move = Vector3.zero;
+        controls.Gameplay.Move.performed += cntxt => move = cntxt.ReadValue<Vector2>();
+        controls.Gameplay.Move.canceled += cntxt => move = Vector2.zero;
     }
 
     private void OnEnable()
@@ -36,6 +36,7 @@ public class MovementNikel : MonoBehaviour
 
     private void OnDisable()
     {
+        //controls.Gameplay.Move.performed -= HandleMove;
         controls.Gameplay.Disable();
     }
 
