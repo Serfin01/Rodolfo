@@ -18,6 +18,7 @@ public class MovePlayer : MonoBehaviour
         input.CharacterControls.Movement.performed += ctx => {
             currentMovement = ctx.ReadValue<Vector2>();
             movementPressed = currentMovement.x != 0 || currentMovement.y != 0;
+            Debug.Log(ctx.ReadValueAsObject());
         };
     }
 
