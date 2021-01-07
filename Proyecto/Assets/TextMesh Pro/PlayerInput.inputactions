@@ -7,9 +7,17 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "f5161bf5-76f0-4119-a5ba-f8000da38a14",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "GodMode",
+                    "type": "Button",
+                    "id": "3384b1e5-b20b-429a-b185-28fc72062396",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -78,6 +86,17 @@
                     "processors": "StickDeadzone",
                     "groups": "GamePad",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8709621a-a1ab-4547-8382-3415e141b469",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "GodMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
