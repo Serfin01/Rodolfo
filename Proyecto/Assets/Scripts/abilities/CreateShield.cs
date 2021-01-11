@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class CreateShield : MonoBehaviour
 {
@@ -24,10 +25,28 @@ public class CreateShield : MonoBehaviour
     [SerializeField] Image imageCooldown;
     //float iniCooldown;
 
+    PlayerInput input;
+
     void Start()
     {
         //shield.SetActive(false);
         imageCooldown.fillAmount = 0.0f;
+    }
+
+    private void Awake()
+    {
+        input = new PlayerInput();
+        input.CharacterControls.Ability1.performed += UseSpell;
+    }
+
+    private void OnEnable()
+    {
+        input.CharacterControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.CharacterControls.Disable();
     }
 
     void Update()
@@ -41,10 +60,12 @@ public class CreateShield : MonoBehaviour
 
         if (Physics.Raycast(myRay, out hit))
         {
+            /*
             if (Input.GetKeyDown("3"))
             {
                 UseSpell();
             }
+            */
         }
     }
 
@@ -63,8 +84,22 @@ public class CreateShield : MonoBehaviour
         }
     }
 
-    public void UseSpell()
+    public void UseSpell(InputAction.CallbackContext obj)
     {
+        if (Physics.Raycast(myRay, out hit))
+        {
+            if (isCooldown)
+            {
+                //StartCoroutine(Shot());
+            }
+            else
+            {
+                InstantiateShield();
+                isCooldown = true;
+                cooldown = iniCooldown;
+            }
+        }
+        /*
         if (isCooldown)
         {
             //StartCoroutine(Shot());
@@ -75,6 +110,7 @@ public class CreateShield : MonoBehaviour
             isCooldown = true;
             cooldown = iniCooldown;
         }
+        */
     }
 
     void InstantiateShield()

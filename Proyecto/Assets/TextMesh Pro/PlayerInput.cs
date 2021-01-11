@@ -41,6 +41,38 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ability1"",
+                    ""type"": ""Button"",
+                    ""id"": ""44a54c89-9aa9-478f-b6f1-c3fc8df1cc96"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ability2"",
+                    ""type"": ""Button"",
+                    ""id"": ""190611df-f564-47d1-87cd-80de72b206e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ability3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f82633e3-7e82-44aa-959c-da6a3c31ce16"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ability4"",
+                    ""type"": ""Button"",
+                    ""id"": ""712b784c-d74f-4ba3-b69f-55e89f7278a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -131,6 +163,50 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2ee67ae-36bf-4765-89f2-45cf27bc748e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f805655-2356-4b53-a92d-adc9fa74bc74"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Ability4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7551f35-208d-44c4-98c2-2df42093a96d"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Ability3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3799157-3e76-4c7c-977e-8028992b0d0f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -170,6 +246,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_CharacterControls_Movement = m_CharacterControls.FindAction("Movement", throwIfNotFound: true);
         m_CharacterControls_GodMode = m_CharacterControls.FindAction("GodMode", throwIfNotFound: true);
         m_CharacterControls_Dash = m_CharacterControls.FindAction("Dash", throwIfNotFound: true);
+        m_CharacterControls_Ability1 = m_CharacterControls.FindAction("Ability1", throwIfNotFound: true);
+        m_CharacterControls_Ability2 = m_CharacterControls.FindAction("Ability2", throwIfNotFound: true);
+        m_CharacterControls_Ability3 = m_CharacterControls.FindAction("Ability3", throwIfNotFound: true);
+        m_CharacterControls_Ability4 = m_CharacterControls.FindAction("Ability4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -222,6 +302,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_CharacterControls_Movement;
     private readonly InputAction m_CharacterControls_GodMode;
     private readonly InputAction m_CharacterControls_Dash;
+    private readonly InputAction m_CharacterControls_Ability1;
+    private readonly InputAction m_CharacterControls_Ability2;
+    private readonly InputAction m_CharacterControls_Ability3;
+    private readonly InputAction m_CharacterControls_Ability4;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -229,6 +313,10 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_CharacterControls_Movement;
         public InputAction @GodMode => m_Wrapper.m_CharacterControls_GodMode;
         public InputAction @Dash => m_Wrapper.m_CharacterControls_Dash;
+        public InputAction @Ability1 => m_Wrapper.m_CharacterControls_Ability1;
+        public InputAction @Ability2 => m_Wrapper.m_CharacterControls_Ability2;
+        public InputAction @Ability3 => m_Wrapper.m_CharacterControls_Ability3;
+        public InputAction @Ability4 => m_Wrapper.m_CharacterControls_Ability4;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -247,6 +335,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
+                @Ability1.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility1;
+                @Ability1.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility1;
+                @Ability1.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility1;
+                @Ability2.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility2;
+                @Ability2.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility2;
+                @Ability2.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility2;
+                @Ability3.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility3;
+                @Ability3.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility3;
+                @Ability3.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility3;
+                @Ability4.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
+                @Ability4.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
+                @Ability4.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -260,6 +360,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
+                @Ability2.started += instance.OnAbility2;
+                @Ability2.performed += instance.OnAbility2;
+                @Ability2.canceled += instance.OnAbility2;
+                @Ability3.started += instance.OnAbility3;
+                @Ability3.performed += instance.OnAbility3;
+                @Ability3.canceled += instance.OnAbility3;
+                @Ability4.started += instance.OnAbility4;
+                @Ability4.performed += instance.OnAbility4;
+                @Ability4.canceled += instance.OnAbility4;
             }
         }
     }
@@ -287,5 +399,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnGodMode(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
+        void OnAbility3(InputAction.CallbackContext context);
+        void OnAbility4(InputAction.CallbackContext context);
     }
 }
