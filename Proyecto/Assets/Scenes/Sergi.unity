@@ -1315,6 +1315,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!96 &516636458 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 6780406250599615123, guid: 3d07f696c9f56744cbdd9e13677e4588,
+    type: 3}
+  m_PrefabInstance: {fileID: 8749059507597749887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &692384796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1693,8 @@ MonoBehaviour:
   colider: {fileID: 815708758}
   canvas: {fileID: 2028417227}
   r_body: {fileID: 857289124}
+  distDash: 5
+  dash: {fileID: 516636458}
 --- !u!136 &815708758 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 8749059508418322396, guid: 3d07f696c9f56744cbdd9e13677e4588,
@@ -2843,7 +2851,7 @@ PrefabInstance:
     - target: {fileID: 8934841377152513923, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9027333253686006953, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
@@ -5376,6 +5384,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 13440391656760829, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8749059508418322389, guid: 3d07f696c9f56744cbdd9e13677e4588,
         type: 3}
       propertyPath: imageCooldown

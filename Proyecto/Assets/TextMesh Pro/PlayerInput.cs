@@ -33,6 +33,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""30201790-22c8-47cb-b73b-0c329a84bee3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -112,6 +120,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""GodMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0f71ff8-547f-4d0c-9b8d-59ce05e22dbf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -150,6 +169,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_CharacterControls = asset.FindActionMap("CharacterControls", throwIfNotFound: true);
         m_CharacterControls_Movement = m_CharacterControls.FindAction("Movement", throwIfNotFound: true);
         m_CharacterControls_GodMode = m_CharacterControls.FindAction("GodMode", throwIfNotFound: true);
+        m_CharacterControls_Dash = m_CharacterControls.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -201,12 +221,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private ICharacterControlsActions m_CharacterControlsActionsCallbackInterface;
     private readonly InputAction m_CharacterControls_Movement;
     private readonly InputAction m_CharacterControls_GodMode;
+    private readonly InputAction m_CharacterControls_Dash;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
         public CharacterControlsActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_CharacterControls_Movement;
         public InputAction @GodMode => m_Wrapper.m_CharacterControls_GodMode;
+        public InputAction @Dash => m_Wrapper.m_CharacterControls_Dash;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -222,6 +244,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @GodMode.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGodMode;
                 @GodMode.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGodMode;
                 @GodMode.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGodMode;
+                @Dash.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -232,6 +257,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @GodMode.started += instance.OnGodMode;
                 @GodMode.performed += instance.OnGodMode;
                 @GodMode.canceled += instance.OnGodMode;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -258,5 +286,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnGodMode(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

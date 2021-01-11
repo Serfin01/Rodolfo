@@ -16,6 +16,9 @@ public class MovePlayer : MonoBehaviour
     public static bool isGodModOn = true;
     public Rigidbody r_body;
 
+    [SerializeField] int distDash;
+    [SerializeField] TrailRenderer dash;
+
     private void Awake()
     {
         input = new PlayerInput();
@@ -25,6 +28,8 @@ public class MovePlayer : MonoBehaviour
             Debug.Log(ctx.ReadValueAsObject());
         };
         input.CharacterControls.GodMode.performed += GodMode;
+        input.CharacterControls.Dash.performed += Dash;
+        dash.emitting = false;
     }
 
     void HandleMovement()
@@ -82,5 +87,38 @@ public class MovePlayer : MonoBehaviour
         isGodModOn = true;
         r_body.useGravity = true;
         transform.gameObject.tag = "Player";
+    }
+
+    void Dash(InputAction.CallbackContext obj)
+    {
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.Translate(distDash, 0, 0);
+            //dash.emitting = true;
+            FindObjectOfType<AudioManager>().Play("dash");
+        }
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.Translate(-distDash, 0, 0);
+            //dash.emitting = true;
+            FindObjectOfType<AudioManager>().Play("dash");
+        }
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            transform.Translate(0, 0, distDash);
+            //dash.emitting = true;
+            FindObjectOfType<AudioManager>().Play("dash");
+        }
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            transform.Translate(0, 0, -distDash);
+            //dash.emitting = true;
+            FindObjectOfType<AudioManager>().Play("dash");
+        }
+        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+        {
+            //dash.emitting = false;
+            Debug.Log("dash fuera");
+        }
     }
 }
