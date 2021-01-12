@@ -3344,21 +3344,6 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1875313299}
-    - target: {fileID: 3678988900056247007, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678988900056247007, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678988900056247007, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3678988900216757699, guid: 22571cd9f204bfe4c803bf941e86fa21,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3369,16 +3354,6 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1875313299}
-    - target: {fileID: 3678988900612278912, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678988900612278912, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3678988901293135788, guid: 22571cd9f204bfe4c803bf941e86fa21,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3498,11 +3473,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'OptionsMenu '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678988901745119093, guid: 22571cd9f204bfe4c803bf941e86fa21,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22571cd9f204bfe4c803bf941e86fa21, type: 3}
