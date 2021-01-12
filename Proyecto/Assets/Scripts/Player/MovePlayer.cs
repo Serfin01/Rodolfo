@@ -29,6 +29,7 @@ public class MovePlayer : MonoBehaviour
         };
         input.CharacterControls.GodMode.performed += GodMode;
         input.CharacterControls.Dash.performed += Dash;
+        input.CharacterControls.Dash.canceled += DisableDash;
         dash.emitting = false;
     }
 
@@ -37,7 +38,7 @@ public class MovePlayer : MonoBehaviour
         if (movementPressed)
         {
             moveDirection = new Vector3(currentMovement.x, 0, currentMovement.y).normalized;
-            r_body.velocity = moveDirection * Time.deltaTime * 500;
+            r_body.velocity = moveDirection * Time.deltaTime * 700;
         }
     }
 
@@ -94,25 +95,25 @@ public class MovePlayer : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0)
         {
             transform.Translate(distDash, 0, 0);
-            //dash.emitting = true;
+            dash.emitting = true;
             FindObjectOfType<AudioManager>().Play("dash");
         }
         if (Input.GetAxis("Horizontal") < 0)
         {
             transform.Translate(-distDash, 0, 0);
-            //dash.emitting = true;
+            dash.emitting = true;
             FindObjectOfType<AudioManager>().Play("dash");
         }
         if (Input.GetAxis("Vertical") > 0)
         {
             transform.Translate(0, 0, distDash);
-            //dash.emitting = true;
+            dash.emitting = true;
             FindObjectOfType<AudioManager>().Play("dash");
         }
         if (Input.GetAxis("Vertical") < 0)
         {
             transform.Translate(0, 0, -distDash);
-            //dash.emitting = true;
+            dash.emitting = true;
             FindObjectOfType<AudioManager>().Play("dash");
         }
         if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
@@ -120,5 +121,10 @@ public class MovePlayer : MonoBehaviour
             //dash.emitting = false;
             Debug.Log("dash fuera");
         }
+    }
+
+    void DisableDash(InputAction.CallbackContext obj)
+    {
+        dash.emitting = false;
     }
 }

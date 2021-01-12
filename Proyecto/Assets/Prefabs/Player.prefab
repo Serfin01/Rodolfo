@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8749059508418322389}
   - component: {fileID: 8749059508418322391}
   - component: {fileID: 8749059508418322390}
+  - component: {fileID: 815708751}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -49,8 +50,8 @@ Rigidbody:
   m_GameObject: {fileID: 8749059508418322399}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
+  m_Drag: 4.2
+  m_AngularDrag: 0.04
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -167,7 +168,8 @@ AudioSource:
   m_GameObject: {fileID: 8749059508418322399}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9241ef001ece0c94b883096ccaaa81f7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9cdd167f6e9b8304d8d3228f29c741ed, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.277
@@ -254,6 +256,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &815708751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749059508418322399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09bd153941d4b143bacf6aa48d74a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colider: {fileID: 8749059508418322396}
+  canvas: {fileID: 0}
+  r_body: {fileID: 8749059508418322395}
+  distDash: 5
+  dash: {fileID: 6780406250599615123}
 --- !u!1001 &3824097433873581559
 PrefabInstance:
   m_ObjectHideFlags: 0
