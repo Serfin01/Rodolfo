@@ -64,7 +64,7 @@ public class LevelLoader_Title : MonoBehaviour
 		SceneManager.LoadScene(levelIndex);
 	}
 
-	public void PlayGame()
+	public void PlayGame()	
     {
 		LoadNextLevel();
 
@@ -77,11 +77,17 @@ public class LevelLoader_Title : MonoBehaviour
 
 	}
 
-	public void SetVolume(float volume)
+	public void SetMasterVolume(float volume)
     {
 		audioMixer.SetFloat("volume", volume);
-    }
 
+	}
+
+	public void SetMusicVolume(float volume)
+    {
+		audioMixer.SetFloat("Music", volume);
+
+	}
 	public void SetQuality(int qualityIndex)
     {
 		QualitySettings.SetQualityLevel(qualityIndex); 
