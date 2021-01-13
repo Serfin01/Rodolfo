@@ -88,6 +88,13 @@ public class LevelLoader_Title : MonoBehaviour
 		audioMixer.SetFloat("Music", volume);
 
 	}
+
+	public void SetSfxVolume(float volume)
+    {
+		audioMixer.SetFloat("Sfx", volume);
+
+    }
+
 	public void SetQuality(int qualityIndex)
     {
 		QualitySettings.SetQualityLevel(qualityIndex); 
