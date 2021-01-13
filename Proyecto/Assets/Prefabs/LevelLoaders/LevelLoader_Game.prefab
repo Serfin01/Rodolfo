@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 9027333253686006953}
   m_Layer: 0
   m_Name: LevelLoader_Game
-  m_TagString: Untagged
+  m_TagString: LevelLoader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8934841377152513922
 Transform:
   m_ObjectHideFlags: 0
@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 8934841377998633608}
   transitionTime: 1
-  E_healt: {fileID: 0}
+  resolutionDropdown: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 2b606f523d4dc1c4eaf76528debfc17b, type: 2}
 --- !u!1 &8934841377964082110
 GameObject:
   m_ObjectHideFlags: 0

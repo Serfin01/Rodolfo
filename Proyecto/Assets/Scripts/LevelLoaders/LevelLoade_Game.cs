@@ -54,6 +54,18 @@ public class LevelLoade_Game : MonoBehaviour
 		audioMixer.SetFloat("volume", volume);
 	}
 
+	public void SetMusicVolume(float volume)
+	{
+		audioMixer.SetFloat("Music", volume);
+
+	}
+
+	public void SetSfxVolume(float volume)
+	{
+		audioMixer.SetFloat("Sfx", volume);
+
+	}
+
 	public void SetQuality(int qualityIndex)
 	{
 		QualitySettings.SetQualityLevel(qualityIndex);
