@@ -104,4 +104,5 @@ public class LevelLoader_Title : MonoBehaviour
     {
 		Screen.fullScreen = isFullscreen;
 	}
+
 }
