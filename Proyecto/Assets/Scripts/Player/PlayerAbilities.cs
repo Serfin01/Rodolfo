@@ -8,6 +8,13 @@ public class PlayerAbilities : MonoBehaviour
     private bool invi;
     public bool canBeDamaged = true;
 
+    bool stance = true;
+    bool ability1 = false;
+    int ability;
+    bool IsSkillUnlocked = false;
+
+    [SerializeField] Shield shield;
+
     void Start()
     {
         invi = false;
@@ -37,6 +44,25 @@ public class PlayerAbilities : MonoBehaviour
         {
             Invisibility();
         }
+
+        switch (ability)
+        {
+            case 5:
+                
+                break;
+            case 4:
+                
+                break;
+            case 3:
+                
+                break;
+            case 2:
+                
+                break;
+            case 1:
+                
+                break;
+        }
     }
 
     void Invisibility()
@@ -45,4 +71,20 @@ public class PlayerAbilities : MonoBehaviour
         Debug.Log("no me ves");
         canBeDamaged = false;
     }
+
+    void GetAbility()
+    {
+        ability = Random.Range(1, 4);
+    }
+    /*
+    private List<SkillType> unlockedSkillTypeList;
+
+    private void UnlockSkill(SkillType skillType)
+    {
+        if (!IsSkillUnlocked(skillType))
+        {
+            unlockedSkillTypeList.Add(skillType);
+        }
+    }
+    */
 }

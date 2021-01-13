@@ -116,11 +116,6 @@ public class MovePlayer : MonoBehaviour
             dash.emitting = true;
             FindObjectOfType<AudioManager>().Play("dash");
         }
-        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
-        {
-            //dash.emitting = false;
-            Debug.Log("dash fuera");
-        }
     }
 
     void DisableDash(InputAction.CallbackContext obj)
