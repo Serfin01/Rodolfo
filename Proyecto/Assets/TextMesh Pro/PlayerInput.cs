@@ -73,6 +73,22 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Invisibility"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2941063-7efe-47f4-a28a-d9cbea60c343"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GetAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""bfd9924f-b40e-4712-ace9-fcd014072727"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -207,6 +223,28 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Ability2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""575afa48-9565-44e2-a9d1-dcd6392224dc"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Invisibility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cce7823-8c33-4ed8-9455-64fb0bd325ae"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""GetAbility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -250,6 +288,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_CharacterControls_Ability2 = m_CharacterControls.FindAction("Ability2", throwIfNotFound: true);
         m_CharacterControls_Ability3 = m_CharacterControls.FindAction("Ability3", throwIfNotFound: true);
         m_CharacterControls_Ability4 = m_CharacterControls.FindAction("Ability4", throwIfNotFound: true);
+        m_CharacterControls_Invisibility = m_CharacterControls.FindAction("Invisibility", throwIfNotFound: true);
+        m_CharacterControls_GetAbility = m_CharacterControls.FindAction("GetAbility", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -306,6 +346,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_CharacterControls_Ability2;
     private readonly InputAction m_CharacterControls_Ability3;
     private readonly InputAction m_CharacterControls_Ability4;
+    private readonly InputAction m_CharacterControls_Invisibility;
+    private readonly InputAction m_CharacterControls_GetAbility;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -317,6 +359,8 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Ability2 => m_Wrapper.m_CharacterControls_Ability2;
         public InputAction @Ability3 => m_Wrapper.m_CharacterControls_Ability3;
         public InputAction @Ability4 => m_Wrapper.m_CharacterControls_Ability4;
+        public InputAction @Invisibility => m_Wrapper.m_CharacterControls_Invisibility;
+        public InputAction @GetAbility => m_Wrapper.m_CharacterControls_GetAbility;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -347,6 +391,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Ability4.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
                 @Ability4.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
                 @Ability4.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnAbility4;
+                @Invisibility.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnInvisibility;
+                @Invisibility.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnInvisibility;
+                @Invisibility.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnInvisibility;
+                @GetAbility.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGetAbility;
+                @GetAbility.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGetAbility;
+                @GetAbility.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnGetAbility;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -372,6 +422,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Ability4.started += instance.OnAbility4;
                 @Ability4.performed += instance.OnAbility4;
                 @Ability4.canceled += instance.OnAbility4;
+                @Invisibility.started += instance.OnInvisibility;
+                @Invisibility.performed += instance.OnInvisibility;
+                @Invisibility.canceled += instance.OnInvisibility;
+                @GetAbility.started += instance.OnGetAbility;
+                @GetAbility.performed += instance.OnGetAbility;
+                @GetAbility.canceled += instance.OnGetAbility;
             }
         }
     }
@@ -403,5 +459,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnAbility2(InputAction.CallbackContext context);
         void OnAbility3(InputAction.CallbackContext context);
         void OnAbility4(InputAction.CallbackContext context);
+        void OnInvisibility(InputAction.CallbackContext context);
+        void OnGetAbility(InputAction.CallbackContext context);
     }
 }

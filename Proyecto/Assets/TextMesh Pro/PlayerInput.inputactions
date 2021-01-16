@@ -60,6 +60,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Invisibility",
+                    "type": "Button",
+                    "id": "b2941063-7efe-47f4-a28a-d9cbea60c343",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "GetAbility",
+                    "type": "Button",
+                    "id": "bfd9924f-b40e-4712-ace9-fcd014072727",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -192,6 +208,28 @@
                     "processors": "",
                     "groups": "keyboard",
                     "action": "Ability2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "575afa48-9565-44e2-a9d1-dcd6392224dc",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "Invisibility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7cce7823-8c33-4ed8-9455-64fb0bd325ae",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "GetAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

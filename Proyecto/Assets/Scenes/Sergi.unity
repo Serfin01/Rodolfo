@@ -2912,6 +2912,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader_Game
       objectReference: {fileID: 0}
+    - target: {fileID: 8934841377152513923, guid: 1551a1eb8505bbc4699a82787ed15818,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9027333253686006953, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
       propertyPath: resolutionDropdown
@@ -3717,6 +3722,12 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1655421693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 271332540142113291, guid: 3d07f696c9f56744cbdd9e13677e4588,
+    type: 3}
+  m_PrefabInstance: {fileID: 8749059507597749887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1660684339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,6 +5462,11 @@ PrefabInstance:
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 1071651279}
+    - target: {fileID: 8749059508418322393, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: rayo
+      value: 
+      objectReference: {fileID: 1655421693}
     - target: {fileID: 8749059508418322394, guid: 3d07f696c9f56744cbdd9e13677e4588,
         type: 3}
       propertyPath: m_LocalPosition.x

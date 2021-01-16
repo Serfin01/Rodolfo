@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
+    PlayerInput input;
+
     private float activationTime;
     private bool invi;
     public bool canBeDamaged = true;
@@ -13,26 +16,38 @@ public class PlayerAbilities : MonoBehaviour
     int ability;
     bool IsSkillUnlocked = false;
 
-    [SerializeField] Shield shield;
+    [SerializeField] GameObject rayo;
+
+    private void Awake()
+    {
+        input = new PlayerInput();
+        input.CharacterControls.Invisibility.performed += InviCooldown;
+        input.CharacterControls.GetAbility.performed += GetAbility;
+    }
+
+    private void OnEnable()
+    {
+        input.CharacterControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.CharacterControls.Disable();
+    }
 
     void Start()
     {
+        rayo.SetActive(false);
         invi = false;
         activationTime = 0;
+        gameObject.GetComponent<Laser>().enabled = false;
+        gameObject.GetComponent<CreateShield>().enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         activationTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            //this.GetComponent<Collider>().enabled = false;
-            //Invi();
-            activationTime = 0;
-            invi = true;
-            
-        }
+        
         if(invi == true && activationTime >= 3)
         {
             invi = false;
@@ -45,24 +60,13 @@ public class PlayerAbilities : MonoBehaviour
             Invisibility();
         }
 
-        switch (ability)
-        {
-            case 5:
-                
-                break;
-            case 4:
-                
-                break;
-            case 3:
-                
-                break;
-            case 2:
-                
-                break;
-            case 1:
-                
-                break;
-        }
+        
+    }
+
+    void InviCooldown(InputAction.CallbackContext obj)
+    {
+        activationTime = 0;
+        invi = true;
     }
 
     void Invisibility()
@@ -72,9 +76,47 @@ public class PlayerAbilities : MonoBehaviour
         canBeDamaged = false;
     }
 
-    void GetAbility()
+    void GetAbility(InputAction.CallbackContext obj)
     {
-        ability = Random.Range(1, 4);
+        ability = Random.Range(1, 2);
+
+        switch (ability)
+        {
+            case 5:
+
+                break;
+            case 4:
+
+                break;
+            case 3:
+
+                break;
+            case 2:
+                if (gameObject.GetComponent<CreateShield>().enabled == false)
+                {
+                    gameObject.GetComponent<CreateShield>().enabled = true;
+                }
+                else
+                {
+                    input.CharacterControls.GetAbility.performed += GetAbility;
+                }
+                break;
+            case 1:
+                if (gameObject.GetComponent<Laser>().enabled == false)
+                {
+                    gameObject.GetComponent<Laser>().enabled = true;
+                    Debug.Log("lo tenemos");
+                }
+                else
+                {
+                    input.CharacterControls.GetAbility.performed += GetAbility;
+                    Debug.Log("no lo tenemos");
+                }
+                break;
+            default:
+                input.CharacterControls.GetAbility.performed += GetAbility;
+                break;
+        }
     }
     /*
     private List<SkillType> unlockedSkillTypeList;
