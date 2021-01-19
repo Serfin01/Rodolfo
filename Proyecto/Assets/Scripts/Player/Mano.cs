@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Mano : MonoBehaviour
 {
+    PlayerInput input;
+
     [SerializeField] GameObject bala;
     private float timer;
     [SerializeField] ParticleSystem Muzzle;
@@ -14,6 +17,23 @@ public class Mano : MonoBehaviour
     [SerializeField] Camera cam;
     private Rigidbody rb; 
     */
+
+    private void Awake()
+    {
+        input = new PlayerInput();
+        input.CharacterControls.Shoot.performed += Disparar;
+    }
+
+    private void OnEnable()
+    {
+        input.CharacterControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.CharacterControls.Disable();
+    }
+
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
@@ -22,15 +42,12 @@ public class Mano : MonoBehaviour
     
     void Update()
     {
-        Disparar();
         timer += Time.deltaTime;
     }
 
-    void Disparar()
+    void Disparar(InputAction.CallbackContext obj)
     {
-
-
-        if (Input.GetMouseButton(0) && timer >= 0.5)
+        if (timer >= 0.5)
         {
 
             Instantiate(bala, transform.position, transform.rotation);
@@ -39,8 +56,6 @@ public class Mano : MonoBehaviour
             
             timer = 0;
         }
-        
-        
     }
 
     

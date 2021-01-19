@@ -76,11 +76,6 @@ public class LevelLoade_Game : MonoBehaviour
 		Screen.fullScreen = isFullscreen;
 	}
 
-	void Update()
-	{
-
-	}
-
 	public void LoadTitleScene()
     {
 		Time.timeScale = 1f;
