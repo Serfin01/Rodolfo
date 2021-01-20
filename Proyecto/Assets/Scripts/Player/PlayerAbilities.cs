@@ -7,6 +7,8 @@ public class PlayerAbilities : MonoBehaviour
 {
     PlayerInput input;
 
+    public GameObject modelo;
+
     private float activationTime;
     private bool invi;
     public bool canBeDamaged = true;
@@ -54,6 +56,7 @@ public class PlayerAbilities : MonoBehaviour
             //this.GetComponent<Collider>().enabled = true;
             Debug.Log("me ves");
             canBeDamaged = true;
+            modelo.SetActive(true);
         }
         if(invi == true)
         {
@@ -74,11 +77,12 @@ public class PlayerAbilities : MonoBehaviour
         //this.GetComponent<Collider>().enabled = false;
         Debug.Log("no me ves");
         canBeDamaged = false;
+        modelo.SetActive(false);
     }
 
     void GetAbility(InputAction.CallbackContext obj)
     {
-        ability = Random.Range(1, 2);
+        ability = Random.Range(1, 3);
 
         switch (ability)
         {
@@ -92,6 +96,7 @@ public class PlayerAbilities : MonoBehaviour
 
                 break;
             case 2:
+                /*
                 if (gameObject.GetComponent<CreateShield>().enabled == false)
                 {
                     gameObject.GetComponent<CreateShield>().enabled = true;
@@ -100,8 +105,11 @@ public class PlayerAbilities : MonoBehaviour
                 {
                     input.CharacterControls.GetAbility.performed += GetAbility;
                 }
+                */
+                Debug.Log("2");
                 break;
             case 1:
+                /*
                 if (gameObject.GetComponent<Laser>().enabled == false)
                 {
                     gameObject.GetComponent<Laser>().enabled = true;
@@ -112,6 +120,8 @@ public class PlayerAbilities : MonoBehaviour
                     input.CharacterControls.GetAbility.performed += GetAbility;
                     Debug.Log("no lo tenemos");
                 }
+                */
+                Debug.Log("1");
                 break;
             default:
                 input.CharacterControls.GetAbility.performed += GetAbility;

@@ -22,6 +22,8 @@ public class Mano : MonoBehaviour
     {
         input = new PlayerInput();
         input.CharacterControls.Shoot.performed += Disparar;
+        //input.CharacterControls.Shoot.started += IniciarRafaga;
+        //input.CharacterControls.Shoot.canceled += FinalizarRafaga;
     }
 
     private void OnEnable()

@@ -100,9 +100,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Shoot"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""5c487c1c-1b55-482b-8b75-6dee60482599"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -365,7 +365,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""14a83d3c-296f-4364-898a-affa928eb5a0"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press,Hold(duration=0.01)"",
                     ""processors"": """",
                     ""groups"": ""keyboard"",
                     ""action"": ""Shoot"",

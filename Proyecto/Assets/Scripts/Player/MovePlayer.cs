@@ -55,6 +55,7 @@ public class MovePlayer : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovement();
+        FixedUpdateDash();
     }
 
     void GodMode(InputAction.CallbackContext obj)
@@ -90,31 +91,37 @@ public class MovePlayer : MonoBehaviour
         transform.gameObject.tag = "Player";
     }
 
+    bool performADash = false;
     void Dash(InputAction.CallbackContext obj)
     {
-        if (Input.GetAxis("Horizontal") > 0)
+        performADash = true;
+    }
+
+    bool mustStop = false;
+    void FixedUpdateDash()
+    {
+        if (performADash)
         {
-            transform.Translate(distDash, 0, 0);
-            dash.emitting = true;
-            FindObjectOfType<AudioManager>().Play("dash");
+            performADash = false;
+            mustStop = true;
+
+            Vector3 dashMovement = Vector3.zero;
+            if (Input.GetAxis("Horizontal") > 0)  { dashMovement.x = distDash;  }
+            if (Input.GetAxis("Horizontal") < 0)  { dashMovement.x = -distDash; }
+            if (Input.GetAxis("Vertical") > 0)    { dashMovement.z = distDash;  }
+            if (Input.GetAxis("Vertical") < 0)    { dashMovement.z = -distDash; }
+
+            if (dashMovement.magnitude > 0.1f)
+            {
+                r_body.velocity = dashMovement / Time.fixedDeltaTime;
+                dash.emitting = true;
+                FindObjectOfType<AudioManager>().Play("dash");
+            }
         }
-        if (Input.GetAxis("Horizontal") < 0)
+        else if (mustStop)
         {
-            transform.Translate(-distDash, 0, 0);
-            dash.emitting = true;
-            FindObjectOfType<AudioManager>().Play("dash");
-        }
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            transform.Translate(0, 0, distDash);
-            dash.emitting = true;
-            FindObjectOfType<AudioManager>().Play("dash");
-        }
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            transform.Translate(0, 0, -distDash);
-            dash.emitting = true;
-            FindObjectOfType<AudioManager>().Play("dash");
+            r_body.velocity = Vector3.zero;
+            mustStop = false;
         }
     }
 
