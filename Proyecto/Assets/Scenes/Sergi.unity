@@ -2921,7 +2921,7 @@ PrefabInstance:
     - target: {fileID: 8934841377152513923, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9027333253686006953, guid: 1551a1eb8505bbc4699a82787ed15818,
         type: 3}
@@ -5587,6 +5587,16 @@ PrefabInstance:
     - target: {fileID: 8749059508418322394, guid: 3d07f696c9f56744cbdd9e13677e4588,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749059508418322395, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749059508418322395, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8749059508418322397, guid: 3d07f696c9f56744cbdd9e13677e4588,
