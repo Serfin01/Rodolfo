@@ -96,20 +96,19 @@ public class PlayerAbilities : MonoBehaviour
 
                 break;
             case 2:
-                /*
                 if (gameObject.GetComponent<CreateShield>().enabled == false)
                 {
                     gameObject.GetComponent<CreateShield>().enabled = true;
+                    Debug.Log("si");
                 }
                 else
                 {
                     input.CharacterControls.GetAbility.performed += GetAbility;
+                    Debug.Log("no");
                 }
-                */
                 Debug.Log("2");
                 break;
             case 1:
-                /*
                 if (gameObject.GetComponent<Laser>().enabled == false)
                 {
                     gameObject.GetComponent<Laser>().enabled = true;
@@ -120,7 +119,6 @@ public class PlayerAbilities : MonoBehaviour
                     input.CharacterControls.GetAbility.performed += GetAbility;
                     Debug.Log("no lo tenemos");
                 }
-                */
                 Debug.Log("1");
                 break;
             default:
