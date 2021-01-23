@@ -19,6 +19,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] int distDash;
     [SerializeField] TrailRenderer dash;
 
+    Animator _animator;
+
     private void Awake()
     {
         input = new PlayerInput();
@@ -31,6 +33,7 @@ public class MovePlayer : MonoBehaviour
         input.CharacterControls.Dash.performed += Dash;
         input.CharacterControls.Dash.canceled += DisableDash;
         dash.emitting = false;
+        _animator = GetComponent<Animator>();
     }
 
     void HandleMovement()
@@ -40,6 +43,14 @@ public class MovePlayer : MonoBehaviour
             moveDirection = new Vector3(currentMovement.x, 0, currentMovement.y).normalized;
             r_body.velocity = moveDirection * Time.deltaTime * 700;
         }
+
+        // Animating
+
+        float velY = Vector3.Dot(moveDirection.normalized, transform.forward);
+        float velX = Vector3.Dot(moveDirection.normalized, transform.right);
+
+        _animator.SetFloat("velY", velY, 0.1f, Time.deltaTime);
+        _animator.SetFloat("velX", velX, 0.1f, Time.deltaTime);
     }
 
     private void OnEnable()
