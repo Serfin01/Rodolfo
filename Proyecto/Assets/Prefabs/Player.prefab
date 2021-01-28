@@ -326,6 +326,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   transition: {fileID: 0}
   transitionTime: 1
+  hitted: {fileID: 0}
 --- !u!114 &8749059508418322393
 MonoBehaviour:
   m_ObjectHideFlags: 0

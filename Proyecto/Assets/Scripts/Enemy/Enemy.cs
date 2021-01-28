@@ -14,5 +14,7 @@ public class Enemy : MonoBehaviour
     public void Damaged(int damage)
     {
         health -= damage;
+        FindObjectOfType<AudioManager>().Play("enemyHitted");
+
     }
 }

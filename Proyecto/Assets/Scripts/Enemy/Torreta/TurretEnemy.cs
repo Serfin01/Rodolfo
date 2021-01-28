@@ -72,7 +72,7 @@ public class TurretEnemy : Enemy
         {
             GameObject.Destroy(gameObject);
             boss.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("enemyDeath");
         }
     }
 
