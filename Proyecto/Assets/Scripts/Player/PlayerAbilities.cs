@@ -20,6 +20,8 @@ public class PlayerAbilities : MonoBehaviour
 
     [SerializeField] GameObject rayo;
 
+    public int AbilitiesNum;
+
     private void Awake()
     {
         input = new PlayerInput();
@@ -82,48 +84,50 @@ public class PlayerAbilities : MonoBehaviour
 
     void GetAbility(InputAction.CallbackContext obj)
     {
-        ability = Random.Range(1, 3);
-
-        switch (ability)
+        if (AbilitiesNum > 4)
         {
-            case 5:
+            ability = Random.Range(1, 3);
 
-                break;
-            case 4:
+            switch (ability)
+            {
+                case 5:
 
-                break;
-            case 3:
+                    break;
+                case 4:
 
-                break;
-            case 2:
-                if (gameObject.GetComponent<CreateShield>().enabled == false)
-                {
-                    gameObject.GetComponent<CreateShield>().enabled = true;
-                    Debug.Log("si");
-                }
-                else
-                {
+                    break;
+                case 3:
+
+                    break;
+                case 2:
+                    if (gameObject.GetComponent<CreateShield>().enabled == false)
+                    {
+                        gameObject.GetComponent<CreateShield>().enabled = true;
+                        AbilitiesNum++;
+                    }
+                    else
+                    {
+                        input.CharacterControls.GetAbility.performed += GetAbility;
+
+                    }
+                    break;
+                case 1:
+                    if (gameObject.GetComponent<Laser>().enabled == false)
+                    {
+                        gameObject.GetComponent<Laser>().enabled = true;
+                        AbilitiesNum++;
+                    }
+                    else
+                    {
+                        input.CharacterControls.GetAbility.performed += GetAbility;
+
+                    }
+                    Debug.Log("1");
+                    break;
+                default:
                     input.CharacterControls.GetAbility.performed += GetAbility;
-                    Debug.Log("no");
-                }
-                Debug.Log("2");
-                break;
-            case 1:
-                if (gameObject.GetComponent<Laser>().enabled == false)
-                {
-                    gameObject.GetComponent<Laser>().enabled = true;
-                    Debug.Log("lo tenemos");
-                }
-                else
-                {
-                    input.CharacterControls.GetAbility.performed += GetAbility;
-                    Debug.Log("no lo tenemos");
-                }
-                Debug.Log("1");
-                break;
-            default:
-                input.CharacterControls.GetAbility.performed += GetAbility;
-                break;
+                    break;
+            }
         }
     }
     /*
