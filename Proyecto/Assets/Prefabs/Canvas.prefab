@@ -1216,6 +1216,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8370323478509223822}
     m_Modifications:
+    - target: {fileID: 170447796, guid: e9698639abf9626418d96bedb4e35eec, type: 3}
+      propertyPath: m_Name
+      value: GammaText
+      objectReference: {fileID: 0}
     - target: {fileID: 235281671, guid: e9698639abf9626418d96bedb4e35eec, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1234,6 +1238,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 844682217, guid: e9698639abf9626418d96bedb4e35eec, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078321533, guid: e9698639abf9626418d96bedb4e35eec, type: 3}
+      propertyPath: m_Name
+      value: SliderGamma
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078321535, guid: e9698639abf9626418d96bedb4e35eec, type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1322548943253972337, guid: e9698639abf9626418d96bedb4e35eec,
@@ -1409,6 +1421,11 @@ PrefabInstance:
     - target: {fileID: 4716146507370263038, guid: e9698639abf9626418d96bedb4e35eec,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521048473278730757, guid: e9698639abf9626418d96bedb4e35eec,
+        type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9136457974874685212, guid: e9698639abf9626418d96bedb4e35eec,

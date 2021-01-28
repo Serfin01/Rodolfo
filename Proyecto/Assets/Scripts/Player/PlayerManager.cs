@@ -21,6 +21,7 @@ public class PlayerManager : Player
         {
             Debug.Log("maricon");
             LoadNextLevel();
+            FindObjectOfType<AudioManager>().Play("rodolfodeath");
             //Destroy(this.gameObject);
         }
         healthBar.SetHealth(currentHealth);
@@ -38,5 +39,14 @@ public class PlayerManager : Player
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(4);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BulletEnemy"))
+        {
+            FindObjectOfType<AudioManager>().Play("hitted");
+
+        }
     }
 }
