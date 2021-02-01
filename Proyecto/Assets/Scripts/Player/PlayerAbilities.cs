@@ -20,9 +20,9 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] GameObject rayo;
 
     public int AbilitiesNum;
-
+    /*
     public Mano mano;
-
+    */
     [Header("Inventario")]
     bool ability1 = false;
     bool ability2 = false;
@@ -104,8 +104,10 @@ public class PlayerAbilities : MonoBehaviour
 
                     break;
                 case 3:
+                    /*
                     mano.cadencia = mano.cadencia / 2;
                     Debug.Log("3");
+                    */
                     break;
                 case 2:
                     if (gameObject.GetComponent<CreateShield>().enabled == false)

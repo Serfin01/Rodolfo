@@ -26,6 +26,7 @@ public class rayoLaser : MonoBehaviour
             {
                 lr.SetPosition(1, hit.point);
             }
+            //if (hit.collider == Collider.FindObjectOfType<"enemy">)
         }
         else lr.SetPosition(1, transform.forward * 5000);
     }
