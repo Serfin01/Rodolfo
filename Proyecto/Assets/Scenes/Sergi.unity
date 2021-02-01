@@ -5571,6 +5571,11 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 1123030914}
+    - target: {fileID: 7111184906088781415, guid: 94a41598994ae8d4291a13095c2519dd,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94a41598994ae8d4291a13095c2519dd, type: 3}
 --- !u!1001 &7362835806447218532
@@ -5738,6 +5743,27 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2028417227}
+    - target: {fileID: 271332540142113291, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645531274348573441, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645531274348573441, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 7111184906088781415, guid: 94a41598994ae8d4291a13095c2519dd,
+        type: 3}
+    - target: {fileID: 8196977722172516603, guid: 3d07f696c9f56744cbdd9e13677e4588,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.004
+      objectReference: {fileID: 0}
     - target: {fileID: 8749059508418322389, guid: 3d07f696c9f56744cbdd9e13677e4588,
         type: 3}
       propertyPath: imageCooldown
