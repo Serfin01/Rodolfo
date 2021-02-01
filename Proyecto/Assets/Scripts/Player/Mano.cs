@@ -17,6 +17,7 @@ public class Mano : MonoBehaviour
     [SerializeField] Camera cam;
     private Rigidbody rb; 
     */
+    public float cadencia;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class Mano : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         timer = 0;
+        cadencia = 1;
     }
     
     void Update()
@@ -49,7 +51,7 @@ public class Mano : MonoBehaviour
 
     void Disparar(InputAction.CallbackContext obj)
     {
-        if (timer >= 0.5)
+        if (timer >= cadencia)
         {
 
             Instantiate(bala, transform.position, transform.rotation);

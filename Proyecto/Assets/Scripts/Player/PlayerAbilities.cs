@@ -14,13 +14,20 @@ public class PlayerAbilities : MonoBehaviour
     public bool canBeDamaged = true;
 
     bool stance = true;
-    bool ability1 = false;
     int ability;
     bool IsSkillUnlocked = false;
 
     [SerializeField] GameObject rayo;
 
     public int AbilitiesNum;
+
+    public Mano mano;
+
+    [Header("Inventario")]
+    bool ability1 = false;
+    bool ability2 = false;
+    bool ability3 = false;
+    bool ability4 = false;
 
     private void Awake()
     {
@@ -84,7 +91,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void GetAbility(InputAction.CallbackContext obj)
     {
-        if (AbilitiesNum > 4)
+        if (AbilitiesNum < 4)
         {
             ability = Random.Range(1, 3);
 
@@ -97,7 +104,8 @@ public class PlayerAbilities : MonoBehaviour
 
                     break;
                 case 3:
-
+                    mano.cadencia = mano.cadencia / 2;
+                    Debug.Log("3");
                     break;
                 case 2:
                     if (gameObject.GetComponent<CreateShield>().enabled == false)
