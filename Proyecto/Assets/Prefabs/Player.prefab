@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 8749059508418322393}
   - component: {fileID: 8749059508418322392}
   - component: {fileID: 8749059508418322389}
+  - component: {fileID: 1384049456097661835}
   - component: {fileID: 8749059508418322391}
   - component: {fileID: 8749059508418322390}
   - component: {fileID: 815708751}
@@ -326,7 +327,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   transition: {fileID: 0}
   transitionTime: 1
-  hitted: {fileID: 0}
 --- !u!114 &8749059508418322393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,9 +339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916ee560242558d4f96bfda92978c451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelo: {fileID: 0}
   canBeDamaged: 1
   rayo: {fileID: 271332540142113291}
+  AbilitiesNum: 0
 --- !u!114 &8749059508418322392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +373,20 @@ MonoBehaviour:
   shield: {fileID: 561938855944987500, guid: f6d1355b03023584a8c26f57545f1d1f, type: 3}
   iniCooldown: 2
   imageCooldown: {fileID: 0}
+--- !u!114 &1384049456097661835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749059508418322399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe6f20c8c10da24f87ea2bb06e15e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDamaged: 1
+  modelo: {fileID: 0}
 --- !u!81 &8749059508418322391
 AudioListener:
   m_ObjectHideFlags: 0

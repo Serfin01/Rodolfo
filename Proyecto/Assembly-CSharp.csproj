@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\UI\Pause.cs" />
     <Compile Include="Assets\Scripts\abilities\Ability.cs" />
     <Compile Include="Assets\Scripts\abilities\CreateShield.cs" />
+    <Compile Include="Assets\Scripts\abilities\Invisibility.cs" />
     <Compile Include="Assets\Scripts\abilities\Laser.cs" />
     <Compile Include="Assets\Scripts\abilities\Scrolls.cs" />
     <Compile Include="Assets\Scripts\abilities\Shield.cs" />

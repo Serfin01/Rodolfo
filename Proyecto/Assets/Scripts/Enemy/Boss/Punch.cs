@@ -18,7 +18,7 @@ public class Punch : MonoBehaviour
         {
             //other.GetComponent<Player>().Damaged(damage);
 
-            if (other.GetComponent<PlayerAbilities>().canBeDamaged)
+            if (other.GetComponent<Invisibility>().canBeDamaged)
             {
                 other.GetComponent<Player>().Damaged(damage);
                 Destroy(this.gameObject);

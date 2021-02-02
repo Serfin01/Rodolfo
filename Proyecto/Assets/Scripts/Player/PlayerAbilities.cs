@@ -7,12 +7,12 @@ public class PlayerAbilities : MonoBehaviour
 {
     PlayerInput input;
 
-    public GameObject modelo;
-
+    //public GameObject modelo;
+    
     private float activationTime;
     private bool invi;
-    public bool canBeDamaged = true;
-
+    //public bool canBeDamaged = true;
+    
     bool stance = true;
     int ability;
     bool IsSkillUnlocked = false;
@@ -32,7 +32,7 @@ public class PlayerAbilities : MonoBehaviour
     private void Awake()
     {
         input = new PlayerInput();
-        input.CharacterControls.Invisibility.performed += InviCooldown;
+        //input.CharacterControls.Invisibility.performed += InviCooldown;
         input.CharacterControls.GetAbility.performed += GetAbility;
     }
 
@@ -49,14 +49,15 @@ public class PlayerAbilities : MonoBehaviour
     void Start()
     {
         rayo.SetActive(false);
-        invi = false;
-        activationTime = 0;
+        //invi = false;
+        //activationTime = 0;
         gameObject.GetComponent<Laser>().enabled = false;
         gameObject.GetComponent<CreateShield>().enabled = false;
     }
 
     void Update()
     {
+        /*
         activationTime += Time.deltaTime;
         
         if(invi == true && activationTime >= 3)
@@ -71,16 +72,15 @@ public class PlayerAbilities : MonoBehaviour
         {
             Invisibility();
         }
-
-        
+        */
     }
-
+    /*
     void InviCooldown(InputAction.CallbackContext obj)
     {
         activationTime = 0;
         invi = true;
     }
-
+    
     void Invisibility()
     {
         //this.GetComponent<Collider>().enabled = false;
@@ -88,7 +88,7 @@ public class PlayerAbilities : MonoBehaviour
         canBeDamaged = false;
         modelo.SetActive(false);
     }
-
+    */
     void GetAbility(InputAction.CallbackContext obj)
     {
         if (AbilitiesNum < 4)
@@ -101,12 +101,22 @@ public class PlayerAbilities : MonoBehaviour
 
                     break;
                 case 4:
-
-                    break;
-                case 3:
                     /*
                     mano.cadencia = mano.cadencia / 2;
                     Debug.Log("3");
+                    */
+                    break;
+                case 3:
+                    /*
+                    if (gameObject.GetComponent<Invisibility>().enabled == false)
+                    {
+                        gameObject.GetComponent<Invisibility>().enabled = true;
+                        AbilitiesNum++;
+                    }
+                    else
+                    {
+                        input.CharacterControls.GetAbility.performed += GetAbility;
+                    }
                     */
                     break;
                 case 2:
@@ -118,7 +128,6 @@ public class PlayerAbilities : MonoBehaviour
                     else
                     {
                         input.CharacterControls.GetAbility.performed += GetAbility;
-
                     }
                     break;
                 case 1:
@@ -130,7 +139,6 @@ public class PlayerAbilities : MonoBehaviour
                     else
                     {
                         input.CharacterControls.GetAbility.performed += GetAbility;
-
                     }
                     Debug.Log("1");
                     break;

@@ -286,7 +286,7 @@ public class BossPrueba : Enemy
         {
             if (melee)
             {
-                if (other.GetComponent<PlayerAbilities>().canBeDamaged)
+                if (other.GetComponent<Invisibility>().canBeDamaged)
                 {
                     other.GetComponent<Player>().Damaged(damage);
                 }
