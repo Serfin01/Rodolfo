@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class LevelLoade_Game : MonoBehaviour
 {
@@ -22,8 +23,11 @@ public class LevelLoade_Game : MonoBehaviour
 
 	LiftGammaGain liftGammaGain;
 
+	[SerializeField] Image crossFadeImage; 
+
 	private void Start()
     {
+		crossFadeImage.color = Color.black;
 		overVolume.profile.TryGet<LiftGammaGain>(out liftGammaGain);
 
 		resolutions = Screen.resolutions;
@@ -65,7 +69,7 @@ public class LevelLoade_Game : MonoBehaviour
 	public void OnSliGammaValue(float newValue)
     {
 		//PlayerPrefs.SetFloat(gamma_PPrefsTag, newValue);
-		liftGammaGain.gamma.value = Vector4.one;
+		liftGammaGain.gamma.value = Vector4.one * newValue;
     }
 
 	public void SetMusicVolume(float volume)

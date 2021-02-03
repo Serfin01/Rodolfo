@@ -19,6 +19,8 @@ public class Mano : MonoBehaviour
     */
     public float cadencia;
 
+    [SerializeField] Animator _animator;
+
     private void Awake()
     {
         input = new PlayerInput();
@@ -60,6 +62,9 @@ public class Mano : MonoBehaviour
             
             timer = 0;
         }
+
+        _animator.SetBool("shoot", true);
+
     }
 
     

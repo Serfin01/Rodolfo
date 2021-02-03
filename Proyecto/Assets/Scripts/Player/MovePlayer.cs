@@ -20,6 +20,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] int distDash;
     [SerializeField] TrailRenderer dash;
 
+    [SerializeField] Transform rotatingElement;
+
     public AudioSource audio;
 
     Animator _animator;
@@ -36,11 +38,12 @@ public class MovePlayer : MonoBehaviour
         input.CharacterControls.Dash.performed += Dash;
         input.CharacterControls.Dash.canceled += DisableDash;
         dash.emitting = false;
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     void HandleMovement()
     {
+        r_body.velocity = Vector3.zero;
         if (movementPressed)
         {
             moveDirection = new Vector3(currentMovement.x, 0, currentMovement.y).normalized;
@@ -57,11 +60,16 @@ public class MovePlayer : MonoBehaviour
 
         // Animating
 
-        float velY = Vector3.Dot(moveDirection.normalized, transform.forward);
-        float velX = Vector3.Dot(moveDirection.normalized, transform.right);
+        //float velZ = Vector3.Dot(moveDirection.normalized, transform.forward);
+        //float velX = Vector3.Dot(moveDirection.normalized, transform.right);
 
-        _animator.SetFloat("velY", velY, 0.1f, Time.deltaTime);
-        _animator.SetFloat("velX", velX, 0.1f, Time.deltaTime);
+        Vector3 localVelocity = rotatingElement.InverseTransformDirection(r_body.velocity);
+        localVelocity.Normalize();
+        //localVelocity /= speed;
+
+        Debug.Log("LocalVelocity " + localVelocity);
+        _animator.SetFloat("velZ", localVelocity.z, 0.1f, Time.deltaTime);
+        _animator.SetFloat("velX", localVelocity.x, 0.1f, Time.deltaTime);
     }
 
     private void OnEnable()
